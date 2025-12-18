@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         table{
             width: 100%;
@@ -18,6 +19,11 @@
     </style>
 </head>
 <body>
+    <div class="back">
+      <a href="index.php?page_layout=trangchu">
+        <i class="fa-solid fa-left-long"></i>
+      </a>
+    </div>
     <h1> Danh sách địa danh  </h1>
     <a class="btn" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
     <table border=1>
@@ -31,6 +37,7 @@
             <th>TOP</th>
         </tr>
         <?php
+            include('connect.php'); 
             $sql="SELECT dd.*, m.tenMua,vm.tenMien FROM `dia_diem` dd join `vung_mien` vm on dd.idVungMien = vm.id join `mua_du_lich` m on dd.idMua = m.id";
             $result = mysqli_query($conn,$sql);
             while($row = mysqli_fetch_array($result)){
