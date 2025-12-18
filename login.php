@@ -18,6 +18,9 @@
         <input type="submit" value="đăng nhập"> 
       </div>
     </form>
+    <div id="register">
+      <a href="register.php">Đăng ký </a>
+    </div>
 
     <?php
       include('connect.php');
@@ -27,16 +30,21 @@
           $matKhau = $_POST['password'];
 
           $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); // $conn là ở bên trong connect.php 
-          if (mysqli_num_rows($result) > 0) { // kiểm tra số dòng sql trả ra 
+          $result = mysqli_query($conn,$sql); 
+          if (mysqli_num_rows($result) > 0) { 
               session_start();
-              $_SESSION["username"] = $tenDangNhap;// lưu để các trang khác có thể dùng 
-              header('location: index.php'); // chuyển đến tranh trangchu.php
+              $_SESSION["username"] = $tenDangNhap;
+              header('location: index.php?page_layout=trangchu'); 
           }
           else{
               echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
           }
       }
     ?>
+
+    <script >
+      const register = document.getElementById("register");
+      
+    </script>
 </body>
 </html>

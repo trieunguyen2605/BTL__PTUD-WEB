@@ -53,6 +53,7 @@
               <ul>
                   <li class="hd__bottom-item">
                     <a class="hd__bottom-link" href="index.php?page_layout=dangxuat">Đăng xuất </a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=register">register </a>
                   </li>
               </ul>
             </div>
@@ -72,20 +73,26 @@
        if(isset($_GET['page_layout'])){ // lấy thông tin thì ta dùng get 
           switch($_GET['page_layout']){
             case 'trangchu':
-                include "trangchu.php"; // gộp hai file lại với nhau 
-                break;
+              include "trangchu.php"; // gộp hai file lại với nhau 
+              break;
             case 'gioithieu':
-                include "gioithieu.php";
-                break;
+              include "gioithieu.php";
+              break;
             case 'diadiemhot':
-                include "diadiemhot.php";
-                break;
+              include "diadiemhot.php";
+              break;
             case 'theomien':
-                include "theomien.php";
-                break;
+              include "theomien.php";
+              break;
             case 'theomua':
-                include "theomua.php";
-                break;
+              include "theomua.php";
+              break;
+            case 'login':
+              include "login.php";
+              break;
+            case 'register':
+              include "register.php";
+              break;
           }
       }
     ?>
