@@ -105,6 +105,12 @@
             case 'themdiadanh':
               include "themdiadanh.php";
               break;
+            case 'capnhatdiadanh':
+              include "capnhatdiadanh.php";
+              break;
+            case 'xoadiadanh':
+              include "xoadiadanh.php";
+              break;
           }
       }
     ?>

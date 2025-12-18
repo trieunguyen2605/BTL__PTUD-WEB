@@ -38,25 +38,19 @@
         <tr>
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['tenDiaDiem'] ?></td>
-            <td><?php echo $row['thoi_luong'] ?></td>
-            <td><?php echo $row['nam'] ?></td>
-            <td><?php echo $row['tuoi'] ?></td>
-            <td><?php echo $row['dao_dien'] ?></td>
-            <td><?php echo $row['link_phim'] ?></td>
-            <td><?php echo $row['trailer'] ?></td>
+            <td><?php echo $row['noiDung'] ?></td>
+            <td><?php echo $row['anhDaiDien'] ?></td>
+            <td><?php echo $row['laTop'] ?></td>
+            <td><?php echo $row['tenMua'] ?></td>
+            <td><?php echo $row['tenMien'] ?></td>
 
-            <td>
+            <!-- <td>
               <img src="./uploads/<?php echo basename($row['poster']); ?>" width="100">
-            </td>
+            </td> -->
 
-            <td><?php echo $row['noi_dung'] ?></td>
-            <td><?php echo $row['mo_ta'] ?></td>
-            <td><?php echo $row['ten_phim'] ?></td>
-            <td><?php echo $row['tenQuocGia'] ?></td>
-            <td><?php echo $row['tenTheLoai'] ?></td>
             <td>
-                <a class="btn" href="index.php?page_layout=capnhatphim&id=<?php echo $row['id'] ?>">Cap nhat</a>
-                <a class="btn" href="index.php?page_layout=xoaphim&id=<?php echo $row['id'] ?>">Xoa</a>
+                <a class="btn" href="index.php?page_layout=capnhatdiadanh&id=<?php echo $row['id'] ?>">Cap nhat</a>
+                <a class="btn" href="index.php?page_layout=xoadiadanh&id=<?php echo $row['id'] ?>">Xoa</a>
             </td>
         </tr>
         <?php
