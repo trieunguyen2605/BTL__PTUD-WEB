@@ -23,21 +23,21 @@
     <table border=1>
         <tr>
             <th>Id</th>
-            <th> vùng miền</th>
-            <th>Mùa</th>
+            <th>Tên vùng miền</th>
+            <th>Tên Mùa</th>
             <th>Tên địa điểm </th>
             <th>Nội dung </th>
             <th>Ảnh đại diện </th>
             <th>TOP</th>
         </tr>
         <?php
-            $sql="SELECT p.*, qg.tenQuocGia,tl.tenTheLoai FROM `dia_diem` d join `quoc_gia` qg on p.quoc_gia_id = qg.id join `the_loai` tl on p.the_loai_id = tl.id";
+            $sql="SELECT dd.*, m.tenMua,vm.tenMien FROM `dia_diem` dd join `vung_mien` vm on dd.idVungMien = vm.id join `mua_du_lich` m on dd.idMua = m.id";
             $result = mysqli_query($conn,$sql);
             while($row = mysqli_fetch_array($result)){
         ?>
         <tr>
             <td><?php echo $row['id'] ?></td>
-            <td><?php echo $row['ma_phim'] ?></td>
+            <td><?php echo $row['tenDiaDiem'] ?></td>
             <td><?php echo $row['thoi_luong'] ?></td>
             <td><?php echo $row['nam'] ?></td>
             <td><?php echo $row['tuoi'] ?></td>
