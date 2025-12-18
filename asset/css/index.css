@@ -1,0 +1,113 @@
+header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hd__wrap{
+  width: 100%;
+  display:flex ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hd__top{
+  width: 100%;
+  padding: 4px 0;
+  background-color: #4EB4F6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hd__top-wr{
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.hd__bottom{
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 60px;
+  background-color:#fff;
+  box-shadow: 0 0 10px #cacaca;
+  z-index: 1000;
+}
+
+.hd__logo img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.hd__bottom-wr{
+  width: 80%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.hd__bottom-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 60px;
+  /* font-size: 20px; */
+}
+
+.hd__bottom-item{
+  list-style: none;
+}
+
+.hd__bottom-link{
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* poster */
+.poster{
+  position: relative;
+  height: 400px;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://sinhtour.vn/wp-content/uploads/2021/11/banner-chuan-sinhtour-scaled.jpg);
+}
+
+.hd__search{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hd__input{
+  padding: 10px 10px;
+  width: 400px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 10px;
+}
+
+.hd__search-logo{
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  color: #000;
+  position: absolute;
+  z-index: 100;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-32%);
+  font-size: 20px;
+}

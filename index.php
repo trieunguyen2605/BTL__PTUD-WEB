@@ -4,8 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BTL_PTUD-WEB</title>
+  <link rel="stylesheet" href="asset/css/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <h1> Bài tập lớn phát triển ứng dụng web </h1>
+    <header>
+      <div class="hd__wrap">
+        <div class="hd__top">
+          <div class="hd__top-wr">
+            <div>Have a good day!</div>
+            <div class="hd__info">
+              Thông tin liên hệ: 0394759392
+            </div>
+          </div>
+        </div>
+        <nav class="hd__bottom">
+          <div class="hd__bottom-wr">
+              <div class="hd__logo">
+                <a href="index.php?page_layout=trangchu">
+                  <img src="asset/img/logo.png" alt="Logo">
+                </a>
+              </div>
+              <ul class="hd__bottom-list">
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=trangchu">Trang chủ</a>
+                  </li>
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=gioithieu">Giới thiệu </a>
+                  </li>
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=diadiemhot">Các địa điểm HOT</a>
+                  </li>
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=theomien">Du lịch theo miền </a>
+                  </li>
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=theomua">Du lịch theo mùa </a>
+                  </li>
+              </ul>
+              <ul>
+                  <li class="hd__bottom-item">
+                    <a class="hd__bottom-link" href="index.php?page_layout=dangxuat">Đăng xuất </a>
+                  </li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </header >
+    <div class="poster">
+      <div class="hd__search">
+        <input type="text" class="hd__input" placeholder="Tìm kiếm..." >
+        <div class="hd__search-logo">
+          <i class=" fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+    </div>
+
+    <?php
+       if(isset($_GET['page_layout'])){ // lấy thông tin thì ta dùng get 
+          switch($_GET['page_layout']){
+            case 'trangchu':
+                include "trangchu.php"; // gộp hai file lại với nhau 
+                break;
+            case 'gioithieu':
+                include "gioithieu.php";
+                break;
+            case 'diadiemhot':
+                include "diadiemhot.php";
+                break;
+            case 'theomien':
+                include "theomien.php";
+                break;
+            case 'theomua':
+                include "theomua.php";
+                break;
+          }
+      }
+    ?>
+
+
+  <script src="script.js"></script>
 </body>
 </html>
