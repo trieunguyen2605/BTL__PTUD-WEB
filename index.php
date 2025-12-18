@@ -53,7 +53,7 @@
               <ul>
                   <li class="hd__bottom-item">
                     <a class="hd__bottom-link" href="index.php?page_layout=dangxuat">Đăng xuất </a>
-                    <a class="hd__bottom-link" href="index.php?page_layout=register">register </a>
+                    <!-- <a class="hd__bottom-link" href="index.php?page_layout=register">register </a> -->
                   </li>
               </ul>
             </div>
@@ -92,6 +92,15 @@
               break;
             case 'register':
               include "register.php";
+              break;
+            case 'dangxuat':
+              session_unset();
+              session_destroy();
+              header ('location:login.php');
+              include "dangxuat.php";
+              break;
+            case 'themdiadanh':
+              include "themdiadanh.php";
               break;
           }
       }
