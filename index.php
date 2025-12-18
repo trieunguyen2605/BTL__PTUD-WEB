@@ -99,8 +99,17 @@
               header ('location:login.php');
               include "dangxuat.php";
               break;
+            case 'listdiadanh':
+              include "listdiadanh.php";
+              break;
             case 'themdiadanh':
               include "themdiadanh.php";
+              break;
+            case 'capnhatdiadanh':
+              include "capnhatdiadanh.php";
+              break;
+            case 'xoadiadanh':
+              include "xoadiadanh.php";
               break;
           }
       }
