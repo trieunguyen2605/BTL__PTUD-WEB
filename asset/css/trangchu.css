@@ -1,0 +1,40 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+
+.places{
+  width: 80%;
+}
+
+.title{
+  margin: 0;
+  font-size: 36px;
+}
+
+.content{
+  margin-bottom: 20px;
+}
+
+.hotPlace__list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pl__item{
+  width: 33.3333%;
+  margin-right: 10px;
+}
+.pl__item img{
+  width: 99%;
+  height: 258px;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.pl__name{
+  text-align: center;
+}
