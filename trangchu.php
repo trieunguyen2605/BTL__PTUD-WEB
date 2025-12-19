@@ -45,6 +45,9 @@
                 <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
       
                 <div id="noidung-<?php echo $row['id'];?>" style="display:none;">
+                  <div class="nd__wrap">
+                    <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                  </div>
                   <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
                   <div class="nd__content">
                       <?php echo $row['noiDung']; ?>
