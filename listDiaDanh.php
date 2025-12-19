@@ -25,7 +25,7 @@
       </a>
     </div>
     <h1> Danh sách địa danh  </h1>
-    <a class="btn" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
+    <a class="btn" href="themdiadanh.php">Thêm địa danh</a>
     <table border=1>
         <tr>
             <th>Id</th>

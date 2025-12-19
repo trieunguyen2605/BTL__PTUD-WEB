@@ -36,6 +36,7 @@
                 <select name="vungmien">
                     <option value="">-- Chọn vùng miền  --</option>
                     <?php
+                        include('connect.php'); 
                         $sqlQG = "SELECT * FROM vung_mien";
                         $resultVM = mysqli_query($conn, $sqlQG);
                         while($rowVM = mysqli_fetch_array($resultVM)){
