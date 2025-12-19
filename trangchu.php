@@ -27,10 +27,51 @@
 
   <div class="container">
     <div class="places">
-      
       <section>
         <h2 class="title"> Địa điểm hot </h2>
-        <div class="content"> Sống để yêu thương </div>
+        <div class="section__hd">
+          <div class="content"> Sống để yêu thương </div>
+          <div class="section__hd-right">
+            <a href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+          </div>
+        </div>
+        <div class="hotPlace__list ">
+          <!-- sản phẩm  -->
+          <?php
+              $sql = "SELECT * FROM `dia_diem` where laTop=1 limit 3";
+              $result = mysqli_query($conn,$sql);
+              while($row = mysqli_fetch_array($result)){
+          ?>
+              <div class="pl__item" onclick="openModal(<?php echo $row['id']; ?>)">
+                <div class="pl__img">
+                  <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                </div>
+                <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
+      
+                <div id="noidung-<?php echo $row['id'];?>" style="display:none;">
+                  <div class="nd__wrap">
+                    <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                  </div>
+                  <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
+                  <div class="nd__content">
+                      <?php echo $row['noiDung']; ?>
+                  </div>
+                </div>
+              </div>
+          <?php
+              }
+          ?>
+        </div>
+      </section>
+
+          <section>
+        <h2 class="title"> Địa điểm hot </h2>
+        <div class="section__hd">
+          <div class="content"> Sống để yêu thương </div>
+          <div class="section__hd-right">
+            <a href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+          </div>
+        </div>
         <div class="hotPlace__list ">
           <!-- sản phẩm  -->
           <?php
