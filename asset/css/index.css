@@ -1,7 +1,9 @@
 header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: fixed; /* Hoặc sticky tùy bạn chọn */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .hd__wrap{
@@ -10,6 +12,7 @@ header{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
 
 .hd__top{
@@ -19,6 +22,7 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  /* height: 40px; */
 }
 
 .hd__top-wr{
@@ -30,8 +34,6 @@ header{
 }
 
 .hd__bottom{
-  position: sticky;
-  top: 0;
   width: 100%;
   display: flex;
   justify-content:center;
@@ -39,7 +41,7 @@ header{
   height: 60px;
   background-color:#fff;
   box-shadow: 0 0 10px #cacaca;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 .hd__logo img{
@@ -79,6 +81,7 @@ header{
   position: relative;
   height: 400px;
   margin-bottom: 20px;
+  margin-top: 86px;
   background-size: cover;
   background-position: center;
   background-image: url(https://sinhtour.vn/wp-content/uploads/2021/11/banner-chuan-sinhtour-scaled.jpg);

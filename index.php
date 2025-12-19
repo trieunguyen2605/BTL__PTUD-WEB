@@ -16,8 +16,8 @@
       include('connect.php'); 
     ?> 
 
-    <header>
-      <div class="hd__wrap">
+<header>
+  <div class="hd__wrap">
         <div class="hd__top">
           <div class="hd__top-wr">
             <div>Have a good day!</div>
@@ -26,7 +26,7 @@
             </div>
           </div>
         </div>
-        <nav class="hd__bottom">
+        <div class="hd__bottom">
           <div class="hd__bottom-wr">
               <div class="hd__logo">
                 <a href="index.php?page_layout=trangchu">
@@ -57,8 +57,8 @@
                   </li>
               </ul>
             </div>
-        </nav>
-      </div>
+        </div>
+      </div>  
     </header >
 
     <?php
