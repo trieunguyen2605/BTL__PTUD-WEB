@@ -60,14 +60,21 @@
         </nav>
       </div>
     </header >
-    <div class="poster">
-      <div class="hd__search">
-        <input type="text" class="hd__input" placeholder="Tìm kiếm..." >
-        <div class="hd__search-logo">
-          <i class=" fa-solid fa-magnifying-glass"></i>
-        </div>
-      </div>
-    </div>
+
+    <?php
+      if (isset($_GET['page_layout']) && (($_GET['page_layout'] == 'trangchu') || ($_GET['page_layout'] == 'diadiemhot')||($_GET['page_layout'] == 'theomua')||($_GET['page_layout'] == 'theomien') ) ){
+        echo"
+          <div class='poster'>
+            <div class='hd__search'>
+              <input type='text' class='hd__input' placeholder='Tìm kiếm...' >
+              <div class='hd__search-logo'>
+                <i class='fa-solid fa-magnifying-glass'></i>
+              </div>
+            </div>
+          </div>
+        ";
+      }
+    ?>
 
     <?php
        if(isset($_GET['page_layout'])){ // lấy thông tin thì ta dùng get 

@@ -135,7 +135,7 @@
                         // echo $sql;
                         mysqli_query($conn, $sql);
 
-                        echo '<script>window.location.href = "listdiadanh.php";</script>';
+                        echo '<script>window.location.href = "index.php?page_layout=listdiadanh";</script>';
                         
                     }   
                 }

@@ -22,7 +22,7 @@
     while($row = mysqli_fetch_array($result)){
       if($row['idVaiTro']==1){
         echo"<div class='admin__list'>
-              <a class='btn' href='listdiadanh.php'>Danh sách địa điểm </a>
+              <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
             </div>";
       }
     }
