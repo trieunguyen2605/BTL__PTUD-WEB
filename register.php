@@ -6,25 +6,68 @@
     <title>Document</title>
     <style>
         main{
-            width: 50%;
-            margin: auto;
+            height:100vh;
+            width: 100%;
+            margin: 0,0;
+            background-image:url(asset/uploads/5.jpg);
+            background-size: cover;
+
+            background-repeat: no-repeat;
         }
+        .container{
+          height:100vh;
+          display:flex;
+          align-items:center;
+         
+          
+        }
+        form{
+          width: 20%;
+          /* height:50%; */
+          margin:auto;
+           /* border-radius:5px;
+          border: 1px sollid black; */
+      
+         
+         
+
+        }
+        input{
+          width: 70%;
+          margin:3px;
+          padding:5px;
+        
+        }
+        .box{
+          border-radius:5px;
+          border: 1px solid black;
+          box-sizing: content;
+          background-color:white;
+          opacity:0.5 ;
+          
+         text-align:center;
+        }
+       
     </style>
 </head>
 <body>
     <main>
-        <h1>Register</h1>
+      <div class= container>
+        
         <form action="index.php?page_layout=register" method="post">
+          <div class="box">
+          <h1>Register</h1>
             <div>
-                <p>Tên đăng nhập </p>
-                <input name="tendangnhap" type="text">
+                
+                <input name="tendangnhap" type="text" placeholder="tên đăng nhập">
             </div>
             <div>
-                <p>Mật khẩu</p>
-                <input name="matkhau" type="text">
+                
+                <input name="matkhau" type="password" placeholder="mật khẩu">
             </div>
             <div>
-                <p>Vai tro</p>
+              <br>
+                Vai tro
                 <select name = "vaitro">
                     <?php
                     include('connect.php'); // phải có cái này thì mới lấy đc dữ liệu 
@@ -39,10 +82,9 @@
                 </select>
             </div>
             <div>
-                <input type="submit" value="Them">
+                <input type="submit" value="Đăng Ký ">
             </div>
-        </form>
-        <?php
+            <?php
             if(!empty($_POST['tendangnhap']) &&
             !empty($_POST['matkhau']) &&
             !empty($_POST['vaitro'])){
@@ -56,9 +98,13 @@
                 header('location:login.php');
             }
             else{
-                echo "Vui long nhap day du thong tin";
+                echo "</br>Vui long nhap day du thong tin</br></br>";
             }
         ?>
+        </div>
+        </form>
+        </div>
+        
     </main>
 </body>
 </html>
