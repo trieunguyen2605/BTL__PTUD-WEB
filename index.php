@@ -30,7 +30,7 @@
           <div class="hd__bottom-wr">
               <div class="hd__logo">
                 <a href="index.php?page_layout=trangchu">
-                  <img src="asset/img/logo.png" alt="Logo">
+                  <img src="asset/uploads/logo.png" alt="Logo">
                 </a>
               </div>
               <ul class="hd__bottom-list">

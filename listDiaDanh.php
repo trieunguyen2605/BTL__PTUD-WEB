@@ -30,11 +30,11 @@
         <tr>
             <th>Id</th>
             <th>Tên vùng miền</th>
-            <th>Tên Mùa</th>
-            <th>Tên địa điểm </th>
             <th>Nội dung </th>
             <th>Ảnh đại diện </th>
             <th>TOP</th>
+            <th>Tên Mùa</th>
+            <th>Tên địa điểm </th>
         </tr>
         <?php
             include('connect.php'); 
@@ -46,14 +46,15 @@
             <td><?php echo $row['id'] ?></td>
             <td><?php echo $row['tenDiaDiem'] ?></td>
             <td><?php echo $row['noiDung'] ?></td>
-            <td><?php echo $row['anhDaiDien'] ?></td>
+            <!-- <td><?php echo $row['anhDaiDien'] ?></td> -->
+
+            <td>
+              <img src="./asset/uploads/<?php echo basename($row['anhDaiDien']); ?>" width="100">
+            </td>
+
             <td><?php echo $row['laTop'] ?></td>
             <td><?php echo $row['tenMua'] ?></td>
             <td><?php echo $row['tenMien'] ?></td>
-
-            <!-- <td>
-              <img src="./uploads/<?php echo basename($row['poster']); ?>" width="100">
-            </td> -->
 
             <td>
                 <a class="btn" href="index.php?page_layout=capnhatdiadanh&id=<?php echo $row['id'] ?>">Cap nhat</a>
