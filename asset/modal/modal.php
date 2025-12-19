@@ -10,10 +10,10 @@
     }
     .modal-content {
       background: #fff; 
-      width: 40%; 
+      width: 30%; 
       max-width: 800px;
       max-height: 85vh; 
-      margin: 200px auto; 
+      margin: 80px auto; 
       padding: 30px; 
       position: relative; 
       border-radius: 15px;
@@ -22,11 +22,21 @@
     }
     .btn-close {
       position: absolute; 
-      right: 20px;
+      right: 30px;
       top: 15px; 
       font-size: 20px; 
       cursor: pointer;
       color: #333;
+    }
+
+    .nd__wrap{
+      display:flex;
+      justify-content:center;
+    }
+
+    .nd__img{
+      height: 260px;
+      width: 386px;
     }
 
     .nd__title{
