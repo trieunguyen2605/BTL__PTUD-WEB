@@ -24,12 +24,12 @@
     <table border=1>
         <tr>
             <th>Id</th>
-            <th>Tên vùng miền</th>
+            <th>Tên địa điểm</th>
             <th>Nội dung </th>
             <th>Ảnh đại diện </th>
             <th>TOP</th>
             <th>Tên Mùa</th>
-            <th>Tên địa điểm </th>
+            <th>Tên vùng miền </th>
         </tr>
         <?php
             include('connect.php'); 

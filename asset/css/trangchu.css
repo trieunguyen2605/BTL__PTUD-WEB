@@ -18,6 +18,14 @@
   margin-bottom: 20px;
 }
 
+section{
+  margin-bottom: 40px;
+}
+.section__hd{
+  display: flex;
+  justify-content: space-between;
+}
+
 .hotPlace__list{
   display: flex;
   justify-content: center;
