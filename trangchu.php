@@ -102,6 +102,47 @@
       </section>
     </div>
   </div>
+  <footer class="footer">
+    <div class="ft_container">
+      <div class="ft_lienhe">
+        <h3>Công ty lữ hành Go Việt</h3>
+        <p>18 Phố Viên, Phường Đức Thắng,<br>Bắc Từ Liêm, TP. Hà Nội, Việt Nam</p>
+        <p>(+84 28) 3855 8888</p>
+        <p>(+84 28) 3886 9155</p>
+        <p>Email: info@goviettravel.com</p>
+      </div>
+      <div class="ft_thongtin">
+        <h3>Thông tin</h3>
+        <ul>
+          <li><a href="#">Trang chủ</a></li>
+          <li><a href="#">Giới thiệu</a></li>
+          <li><a href="#">Các địa điểm HOT</a></li>
+          <li><a href="#">Du lịch theo miền</a></li>
+          <li><a href="#">Du lịch theo mùa</a></li>
+        </ul>
+      </div>
+      <div class="ft_chungnhan">
+        <h3>Chứng nhận</h3>
+        <img src="asset/uploads/footer-2.png" alt="">
+        <img src="asset/uploads/DMCA.png" alt="">
+      </div>
+      <div class="ft_ketnoi">
+        <h3>Kết nối với chúng tôi</h3>
+        <p>
+          Để lại Email hoặc số điện thoại để
+          chúng tôi có thể tư vấn giúp bạn
+        </p>
+        <form class="contact-form">
+          <input
+            type="text"
+            placeholder="Email hoặc Số điện thoại"
+            required
+          />
+          <button type="submit"></button>
+        </form>
+      </div>
+    </div>
+  </footer>
 
   <?php include 'asset/modal/modal.php'; ?>
 </body>
