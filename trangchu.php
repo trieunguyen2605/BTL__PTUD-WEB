@@ -146,7 +146,7 @@
             placeholder="Email hoặc Số điện thoại"
             required
           />
-          <button type="submit"></button>
+          <button type="submit">Gửi</button>
         </form>
       </div>
     </div>

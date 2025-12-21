@@ -104,8 +104,8 @@ section{
 .ft_ketnoi {
   padding: 24px;
   border-radius: 10px;
-  font-size: 20px;
-  margin-bottom: 18px;
+  /* font-size: 20px;
+  margin-bottom: 18px; */
 }
 
 .contact-form {
