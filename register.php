@@ -14,13 +14,15 @@
           background-repeat: no-repeat;
         }
         .container{
-          height:100vh;
+          /* height:100vh; */
           display:flex;
           /* align-items:center; */
+          margin-top 150px;
         }
         form{
           width: 20%;
           margin:auto;
+         
         }
 
         h1{
@@ -43,6 +45,8 @@
 
           opacity:0.98 ;
           text-align:center;
+          margin-top:150px;
+          
         }
 
         .btn{
