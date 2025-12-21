@@ -135,7 +135,7 @@
         <img src="asset/uploads/DMCA.png" alt="">
       </div>
       <div class="ft_ketnoi">
-        <h3>Kết nối với chúng tôi</h3>
+        <h3 style="margin-top:0%;">Kết nối với chúng tôi</h3>
         <p>
           Để lại Email hoặc số điện thoại để
           chúng tôi có thể tư vấn giúp bạn

@@ -22,14 +22,18 @@
             border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
+            /* display: flex;
+            justify-content: center;
+            justify-content: space-around; */
         }
         tr{
 
         }
+        
     </style>
 </head>
 
-<body style="margin: 5%">
+<body style="margin-top: 7%">
     <h1> Danh sách địa danh </h1>
     <a class="btn" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
     <table border=2>
@@ -75,8 +79,16 @@
             </td>
 
             <td>
-                <a class="btn" href="index.php?page_layout=capnhatdiadanh&id=<?php echo $row['id'] ?>">Cap nhat</a>
-                <a class="btn" href="index.php?page_layout=xoadiadanh&id=<?php echo $row['id'] ?>">Xoa</a>
+                <div >
+                    <div style=" display: flex;
+        justify-content: center;
+        justify-content: space-around;">
+                        <a  class="btn" href="index.php?page_layout=capnhatdiadanh&id=<?php echo $row['id'] ?>">Cap nhat</a>
+                    </div>
+                    <div>
+                        <a class="btn" href="index.php?page_layout=xoadiadanh&id=<?php echo $row['id'] ?>">Xoa</a>
+                    </div>
+                </div>
             </td>
         </tr>
         <?php

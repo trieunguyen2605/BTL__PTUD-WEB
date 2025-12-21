@@ -54,7 +54,7 @@
     <main>
       <div class= container>
         
-        <form action="index.php?page_layout=forgetpw.php" method="post">
+        <form action="index.php?page_layout=login.php" method="post">
           <div class="box">
           <h1>Quên mật khẩu</h1>
             <div>
