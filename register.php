@@ -9,16 +9,16 @@
             height:100vh;
             width: 100%;
             margin: 0,0;
-            background-image:url(asset/uploads/5.jpg);
+            background-image:url(asset/uploads/poster.jpg);
             background-size: cover;
 
             background-repeat: no-repeat;
         }
         .container{
-          height:100vh;
+          height:auto;
           display:flex;
           align-items:center;
-         
+         margin: auto;
           
         }
         form{

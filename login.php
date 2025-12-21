@@ -10,7 +10,6 @@
         body{
            
             height: 100vh;
-            background-image: url(5.jpg);
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -20,7 +19,7 @@
             
             margin:  auto;
             width: 20%;
-            height:50%;
+            height:auto ;
            background-color: rgba(255, 255, 255, 0.85);
             /* background-color: rgba(198, 196, 196, 0.392); */
             display:flex;
@@ -34,14 +33,6 @@
             justify-content: center;
         }
         .box input{
-            /* margin-bottom: 10px;
-            width: 100%;
-            padding: 5px 0;
-            border-radius: 5px;
-            /* background-color: rgb(244, 247, 213); */
-            /* background-color:white;
-            color: black;
-            border: 2px solid black; */
             
             width: 100%;
             padding: 10px;
@@ -84,7 +75,7 @@
           }
       }
     ?>
-<body style="background-image: url(asset/uploads/5.jpg);background-repeat: no-repeat;background-size: cover;">
+<body style="background-image: url(asset/uploads/poster.jpg);background-repeat: no-repeat;background-size: cover;">
         <div class="container"  >
             
             <form action="login.php" method="post">
@@ -98,6 +89,7 @@
                 <div class="box">
                 <input  type="submit" value="Đăng nhập">
                 </div>
+                <a href="forgetpw.php"> Quên mật khẩu? </a>
                 <?php if($error != ""): ?>
                 <p class="warning"><?= $error ?></p>
                 <?php endif; ?>

@@ -118,6 +118,9 @@
             case 'xoadiadanh':
               include "xoadiadanh.php";
               break;
+            case 'forgetpw':
+              include "forgetpw.php";
+              break;
           }
       }
     ?>
