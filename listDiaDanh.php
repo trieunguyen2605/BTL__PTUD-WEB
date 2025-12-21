@@ -12,7 +12,6 @@
         table{
             width: 100%;
         }
-
         .btn{
             color: black;
             border: 1px solid black;

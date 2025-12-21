@@ -56,7 +56,6 @@
         <div class="hotPlace__list ">
           <!-- sản phẩm  -->
           <?php
-            // $sql = "SELECT * FROM `dia_diem` where idMua IN (1,2,3,4) limit 3";
             $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 order by rand() LIMIT 1)
                     UNION
                     (SELECT * FROM dia_diem WHERE idMua = 3  order by rand() LIMIT 1)

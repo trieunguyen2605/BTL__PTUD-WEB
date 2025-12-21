@@ -22,20 +22,20 @@
     margin: 0;
     font-size: 36px;
   }
-  .hotPlace__list{
+  .hotPlace__list{ 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap:wrap;
-    
   }
+
   .pl__item{
     width: 33.3333%;
   }
 
   .pl__item:nth-child(2){
     box-sizing: border-box;
-    margin: 0 5px;
+    /* margin: 0 5px; */
   }
 
   .pl__img{
@@ -78,5 +78,6 @@
       </section>
     </div>
   </div>
+  <?php include 'asset/modal/modal.php'; ?>
 </body>
 </html>

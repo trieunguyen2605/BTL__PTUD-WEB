@@ -34,7 +34,6 @@ section{
 
 .pl__item{
   width: 33.3333%;
-  /* margin-right: 10px; */
 }
 
 .pl__item:nth-child(2){
@@ -45,7 +44,6 @@ section{
 .pl__img{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .pl__img img{
