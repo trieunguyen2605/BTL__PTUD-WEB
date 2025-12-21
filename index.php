@@ -55,17 +55,6 @@
                   <li class="hd__bottom-item">
                     <a class="hd__bottom-link" href="index.php?page_layout=dangxuat">Đăng xuất </a>
                     <!-- <a class="hd__bottom-link" href="index.php?page_layout=register">register </a> -->
-                    <?php
-                      $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
-                      $result = mysqli_query($conn,$sql);
-                      while($row = mysqli_fetch_array($result)){
-                        if($row['idVaiTro']==1){
-                          echo"<div class='admin__list'>
-                                <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
-                              </div>";
-                        }
-                      }
-                    ?>
                   </li>
               </ul>
             </div>
@@ -130,8 +119,11 @@
             case 'xoadiadanh':
               include "xoadiadanh.php";
               break;
-            case 'thongtin':
-              include "thongtin.php";
+            case 'forgetpw':
+              include "forgetpw.php";
+              break;
+            case 'nguoidung':
+              include "nguoidung.php";
               break;
           }
       }

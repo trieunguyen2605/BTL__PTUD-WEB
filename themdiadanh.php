@@ -5,69 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm Phim Mới</title>
     <style>
+        body{
+            margin:10%;
+        }
         main{
             width: 50%;
             margin: auto;
         }
+         form,
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            margin: auto;
+        }
+
+        input {
+            border: 2px solid rgb(130, 152, 8);
+            border-radius: 5px;
+        }
+        .warning{
+           
+          color: red;
+            text-align: center;
+        }
     </style>
 </head>
-<body>
-    <main>
-        <h1>Thêm địa danh Mới</h1>
-        <form action="index.php?page_layout=themdiadanh" method="post" enctype="multipart/form-data">
-            
-            <div>
-                <p>Tên địa điểm </p>
-                <input name="tendiadiem" type="text" >
-            </div>
+<body >
+    <h1>Thêm địa danh Mới</h1>
+    <form action="index.php?page_layout=themdiadanh" method="post" enctype="multipart/form-data">
+            <div style=" width:50%;border:2px solid rgb(130, 152, 8); border-radius: 5px;">
+                <div class="row">
+                    <div>
+                        <p>Tên địa điểm: </p>
+                        <input name="tendiadiem" type="text">
+                    </div>
 
-            <div>
-                <p>Nội dung</p>
-                <input name="noidung" type="text"  >
-            </div>
+                    <div>
+                        <p>Nội dung:</p>
+                        <textarea style="border: 2px solid rgb(130, 152, 8);border-radius: 5px;"
+                            name="noidung"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <p>Ảnh đại diện: </p>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <p>Vùng miền: </p>
+                        <select style="border: 2px solid rgb(130, 152, 8);border-radius: 5px;" name="vungmien">
+                            <option value="">-- Chọn vùng miền --</option>
+                            <?php
+                            include('connect.php'); 
+                            $sqlQG = "SELECT * FROM vung_mien";
+                            $resultVM = mysqli_query($conn, $sqlQG);
+                            while($rowVM = mysqli_fetch_array($resultVM)){
+                                echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
+                            }
+                        ?>
+                        </select>
+                    </div>
 
-            <div>
-                <p>Ảnh đại diện </p>
-                <input type="file" name="fileToUpload" id="fileToUpload">
-            </div>
+                    <div>
+                        <p>Mùa: </p>
+                        <select style="border: 2px solid rgb(130, 152, 8);border-radius: 5px;" name="mua">
+                            <option value="">-- Chọn Mùa --</option>
+                            <?php
+                            $sqlTL = "SELECT * FROM mua_du_lich";
+                            $resultM = mysqli_query($conn, $sqlTL);
+                            while($rowM = mysqli_fetch_array($resultM)){
+                            echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
+                            }
+                        ?>
+                        </select>
+                    </div>
 
-            <div>
-                <p>Vùng miền </p>
-                <select name="vungmien">
-                    <option value="">-- Chọn vùng miền  --</option>
-                    <?php
-                        include('connect.php'); 
-                        $sqlQG = "SELECT * FROM vung_mien";
-                        $resultVM = mysqli_query($conn, $sqlQG);
-                        while($rowVM = mysqli_fetch_array($resultVM)){
-                            echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
-                        }
-                    ?>
-                </select>
-            </div>
-
-            <div>
-                <p>Mùa </p>
-                <select name="mua">
-                    <option value="">-- Chọn Mùa --</option>
-                    <?php
-                        $sqlTL = "SELECT * FROM mua_du_lich";
-                        $resultM = mysqli_query($conn, $sqlTL);
-                        while($rowM = mysqli_fetch_array($resultM)){
-                          echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
-                        }
-                    ?>
-                </select>
-            </div>
-
-            <div>
-                <p>TOP</p>
-                <input name="latop" type="text"  >
-            </div>
-
-            <br>
-            <div>
-                <input type="submit"   value="Thêm địa danh ">
+                    <div>
+                        <p>TOP:</p>
+                        <input name="latop" type="text">
+                    </div>
+                </div>
+                <br>
+                <div class="row" style="margin-bottom: 10px;">
+                    <input type="submit" value="Thêm địa danh ">
+                </div>
             </div>
         </form>
 
@@ -141,7 +170,8 @@
                 }
                 }
                 else{
-                    echo " Vui lòng nhập  đủ thông tin ";
+                    echo "<p class='warning'>Vui lòng nhập đủ thông tin !!</p>";
+                    // echo " Vui lòng nhập  đủ thông tin "; 
                 }
         ?>
     </main>

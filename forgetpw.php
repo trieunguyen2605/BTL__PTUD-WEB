@@ -5,41 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        main{
-            height:100vh;
-            width: 100%;
-            margin: 0,0;
-            background-image:url(asset/uploads/poster.jpg);
-            background-size: cover;
-
+       body{
+           background-image: url(asset/uploads/poster.jpg);
+            height: 100vh;
             background-repeat: no-repeat;
-        }
+            background-size: cover;
+            background-position: center;
+                }
         .container{
-          /* height:100vh; */
+            
+          height:100vh;
           display:flex;
-<<<<<<< HEAD
           align-items:center;
          margin: auto;
           
-=======
-          /* align-items:center; */
-          margin-top 150px;
->>>>>>> 68f0cb73ef14649c21aa14b7d4b2de9ab6097419
         }
         form{
           width: 20%;
           /* height:50%; */
           margin:auto;
-<<<<<<< HEAD
            /* border-radius:5px;
           border: 1px sollid black; */
       
          
          
-=======
-         
-        }
->>>>>>> 68f0cb73ef14649c21aa14b7d4b2de9ab6097419
 
         }
         input{
@@ -49,28 +38,14 @@
         
         }
         .box{
+            background-color: rgba(255, 255, 255, 1);
           border-radius:5px;
           border: 1px solid black;
           box-sizing: content;
-          background-color:white;
-<<<<<<< HEAD
+          /* background-color:white; */
           opacity:0.5 ;
           
          text-align:center;
-=======
-
-          opacity:0.98 ;
-          text-align:center;
-          margin-top:150px;
-          
-        }
-
-        .btn{
-          width:249px;
-          background-color: #4eb4f6;
-          color:white;
-          font-size:15px;
->>>>>>> 68f0cb73ef14649c21aa14b7d4b2de9ab6097419
         }
        
     </style>
@@ -79,18 +54,18 @@
     <main>
       <div class= container>
         
-        <form action="index.php?page_layout=register" method="post">
+        <form action="index.php?page_layout=forgetpw.php" method="post">
           <div class="box">
-          <h1>Register</h1>
+          <h1>Quên mật khẩu</h1>
             <div>
                 
                 <input name="tendangnhap" type="text" placeholder="tên đăng nhập">
             </div>
             <div>
                 
-                <input name="matkhau" type="password" placeholder="mật khẩu">
+                <input name="matkhau" type="password" placeholder="mật khẩu mới">
             </div>
-            <div>
+            <!-- <div>
               <br>
                 Vai tro
                 <select name = "vaitro">
@@ -105,19 +80,19 @@
                       }
                     ?>
                 </select>
-            </div>
+            </div> -->
             <div>
-                <input type="submit" value="Đăng Ký ">
+                <input type="submit" value="Xác nhận">
             </div>
             <?php
             if(!empty($_POST['tendangnhap']) &&
-            !empty($_POST['matkhau']) &&
-            !empty($_POST['vaitro'])){
+            !empty($_POST['matkhau']) 
+            ){
                 $tenDangNhap = $_POST['tendangnhap'];
                 $matKhau = $_POST['matkhau'];
-                $vaiTro = $_POST['vaitro'];
+                
 
-                $sql="INSERT INTO `nguoi_dung`(`tenDangNhap`, `matKhau`,`idVaiTro`) VALUES ('$tenDangNhap','$matKhau','$vaiTro')";
+                $sql="UPDATE `nguoi_dung` SET `tenDangNhap`='$tenDangNhap',`matKhau`='$matKhau' WHERE id = '$id'";
                 // echo $sql;
                 mysqli_query($conn, $sql);
                 header('location:login.php');
