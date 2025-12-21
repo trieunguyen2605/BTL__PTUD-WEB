@@ -31,21 +31,11 @@
               $result = mysqli_query($conn,$sql);
               while($row = mysqli_fetch_array($result)){
           ?>
-              <div class="pl__item" onclick="openModal(<?php echo $row['id']; ?>)">
+              <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
                 <div class="pl__img">
                   <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
                 </div>
                 <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
-      
-                <div id="noidung-<?php echo $row['id'];?>" style="display:none;">
-                  <div class="nd__wrap">
-                    <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
-                  </div>
-                  <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
-                  <div class="nd__content">
-                      <?php echo $row['noiDung']; ?>
-                  </div>
-                </div>
               </div>
           <?php
               }
@@ -68,7 +58,7 @@
               $result = mysqli_query($conn,$sql);
               while($row = mysqli_fetch_array($result)){
           ?>
-              <div class="pl__item" onclick="openModal(<?php echo $row['id']; ?>)">
+              <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
                 <div class="pl__img">
                   <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
                 </div>

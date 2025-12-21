@@ -129,6 +129,9 @@
             case 'xoadiadanh':
               include "xoadiadanh.php";
               break;
+            case 'thongtin':
+              include "thongtin.php";
+              break;
           }
       }
     ?>
