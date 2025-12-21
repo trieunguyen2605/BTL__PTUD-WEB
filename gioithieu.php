@@ -72,7 +72,7 @@ Cùng với đó, nền ẩm thực phong phú, đa dạng từ những món ăn
           <h2 class="in__title">4. Miền Nam - Sôi Động Đô Thị và Sông Nước Hiền Hòa</h2>
           <div class="in__wrap">
             <div class="in__left">
-              <img class="in__img" src="/asset/uploads/gioithieu.MN.jpg" alt="">
+              <img class="in__img" src="asset/uploads/gioithieu.MN.jpg" alt="">
             </div>
             <div class="in__right">
               <p class="in__text">Miền Nam Việt Nam mang hai thái cực hấp dẫn: sự năng động, hiện đại của đô thị và vẻ bình yên, phóng khoáng của thiên nhiên.</p>
