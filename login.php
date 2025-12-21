@@ -62,53 +62,62 @@
             text-align: center;
         }
        
-    </style>
-<?php
+</style>
+
+  <?php
     $error="";
-      include('connect.php');
+    include('connect.php');
+    if(isset($_POST['username']) && isset($_POST['password'])){ 
+        $tenDangNhap = $_POST['username'];
+        $matKhau = $_POST['password'];
 
-      if(isset($_POST['username']) && isset($_POST['password'])){ 
-          $tenDangNhap = $_POST['username'];
-          $matKhau = $_POST['password'];
+        $sql = "SELECT * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
+        $result = mysqli_query($conn,$sql); 
+        if (mysqli_num_rows($result) > 0) { 
+            session_start();
+            $_SESSION["username"] = $tenDangNhap;
 
-          $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); 
-          if (mysqli_num_rows($result) > 0) { 
-              session_start();
-              $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
-          }
-          else{
-            $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
-            //   echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
-          }
-      }
-    ?>
+            while($row = mysqli_fetch_array($result)){
+              if($row['idVaiTro'] == 1){
+                header('location: index.php?page_layout=listdiadanh'); 
+              }else{
+                header('location: index.php?page_layout=trangchu'); 
+              }
+            }
+        }
+        else{
+          $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
+        }
+    }
+  ?>
+
 <body style="background-image: url(asset/uploads/5.jpg);background-repeat: no-repeat;background-size: cover;">
-        <div class="container"  >
-            
-            <form action="login.php" method="post">
-                <h1>Đăng nhập </h1>
-                <div class="box">
-                <input type="text" name="username" placeholder="Ten dang nhap ">
-                </div>
-                <div class="box">
-                <input type="password" name="password" placeholder="Mat khau  ">
-                </div>
-                <div class="box">
-                <input  type="submit" value="Đăng nhập">
-                </div>
-                <?php if($error != ""): ?>
-                <p class="warning"><?= $error ?></p>
-                <?php endif; ?>
-                
-                <div id="register" style="border-top: 2px solid grey">  
-                <p > Bạn chưa có tài khoản?</p>
-                <a href="register.php"> Đăng ký </a> 
-                </div>
-                
-            </form>
-        </div>
+  <div class="container"  >
+      
+      <form action="login.php" method="post">
+          <h1>Đăng nhập </h1>
+          <div class="box">
+          <input type="text" name="username" placeholder="Ten dang nhap ">
+          </div>
+          <div class="box">
+          <input type="password" name="password" placeholder="Mat khau  ">
+          </div>
+          <div class="box">
+          <input  type="submit" value="Đăng nhập">
+          </div>
+
+          <?php if($error != ""): ?>
+            <p class="warning"><?= $error ?></p>
+          <?php endif; ?>
+          
+          <div id="register" style="border-top: 2px solid grey">  
+            <p > Bạn chưa có tài khoản?</p>
+            <a href="register.php"> Đăng ký </a> 
+          </div>
+          
+      </form>
+  </div>
+
 
   <script>
     const register = document.getElementById("register");
