@@ -15,7 +15,7 @@
             background-repeat: no-repeat;
         }
         .container{
-          height:auto;
+          height:100vh;
           display:flex;
           align-items:center;
          margin: auto;

@@ -121,6 +121,9 @@
             case 'forgetpw':
               include "forgetpw.php";
               break;
+            case 'nguoidung':
+              include "nguoidung.php";
+              break;
           }
       }
     ?>

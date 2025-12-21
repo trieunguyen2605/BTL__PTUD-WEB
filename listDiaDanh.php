@@ -10,23 +10,27 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         table {
+            margin-top: 5px;
             width: 100%;
         }
 
         .btn {
-            margin-bottom: 5%;
             color: black;
-            border: 1px solid black;
+           background-color: rgba(210, 252, 111, 0.392);
+            border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
+        }
+        tr{
+
         }
     </style>
 </head>
 
-<body style="margin: 10%">
+<body style="margin: 5%">
     <h1> Danh sách địa danh </h1>
     <a class="btn" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
-    <table border=1>
+    <table border=2>
         <tr>
             <th>Id</th>
             <th>Tên địa điểm</th>
