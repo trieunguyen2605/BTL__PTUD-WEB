@@ -108,33 +108,7 @@
                 </div>
                 
             </form>
-            
-            <!-- <div id="register">
-                <a href="register.php">Đăng ký </a>
-            </div> -->
         </div>
-      
-  <!-- <?php
-    $error="";
-      include('connect.php');
-
-      if(isset($_POST['username']) && isset($_POST['password'])){ 
-          $tenDangNhap = $_POST['username'];
-          $matKhau = $_POST['password'];
-
-          $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); 
-          if (mysqli_num_rows($result) > 0) { 
-              session_start();
-              $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
-          }
-          else{
-            $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
-            //   echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
-          }
-      }
-    ?> -->
 
   <script>
     const register = document.getElementById("register");

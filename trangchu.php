@@ -64,12 +64,12 @@
         </div>
       </section>
 
-          <section>
-        <h2 class="title"> Địa điểm hot </h2>
+      <section>
+        <h2 class="title"> Du lịch mùa  </h2>
         <div class="section__hd">
           <div class="content"> Sống để yêu thương </div>
           <div class="section__hd-right">
-            <a href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+            <a href="index.php?page_layout=theomua">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
           </div>
         </div>
         <div class="hotPlace__list ">
