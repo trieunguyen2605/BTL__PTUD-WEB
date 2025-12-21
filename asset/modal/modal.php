@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     .modal-overlay {
       display: none; 
       position: fixed; 
@@ -51,17 +51,10 @@
         <span class="btn-close" onclick="closeModal()">X</span>
         <div id="value"></div>
     </div>
-</div>
+</div> -->
 
 <script>
-    function openModal(id) {
-        var layNoiDung = document.getElementById('noidung-'+id);
-        var content = layNoiDung.innerHTML;
-        document.getElementById('value').innerHTML = content;
-        document.getElementById('modal').style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById('modal').style.display = "none";
+    function openInfo(id) {
+      window.location.href = 'index.php?page_layout=thongtin&id=' + id;
     }
 </script>

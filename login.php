@@ -17,75 +17,107 @@
                 }
         .container{
             
+            
+            margin:  auto;
+            width: 20%;
+            height:50%;
+           background-color: rgba(255, 255, 255, 0.85);
+            /* background-color: rgba(198, 196, 196, 0.392); */
             display:flex;
             align-items: center; 
             justify-content: center;
+            border-radius: 10px;
             
         }
+        .box{
+            display: flex;
+            justify-content: center;
+        }
         .box input{
-            margin-bottom: 10px;
+            /* margin-bottom: 10px;
             width: 100%;
             padding: 5px 0;
             border-radius: 5px;
-            background-color: rgb(244, 247, 213);
+            /* background-color: rgb(244, 247, 213); */
+            /* background-color:white;
             color: black;
-            border: 2px solid white;
+            border: 2px solid black; */
+            
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+
             
         }
-        form {
+
+       form {
             text-align: center;
         }
         .warning{
-          font-size: 20px;
+          font-size: 14px;
           color: red;
-           text-align: center;
+            text-align: center;
         }
        
-    </style>
+</style>
 
-<body style="background-image: url(5.jpg);background-repeat: no-repeat;background-size: cover;">
-        <div class="container" >
-            
-            <form action="login.php" method="post">
-                <h1>Đăng nhập </h1>
-                <div class="box">
-                <input type="text" name="username" placeholder="Ten dang nhap ">
-                </div>
-                <div class="box">
-                <input type="password" name="password" placeholder="Mat khau  ">
-                </div>
-                <div class="box">
-                <input type="submit" value="Đăng nhập">
-                </div>
-                <div id="register">
-                <a href="register.php">Đăng ký </a>
-            </div>
-            </form>
-            
-            <!-- <div id="register">
-                <a href="register.php">Đăng ký </a>
-            </div> -->
-        </div>
-      
   <?php
-      include('connect.php');
+    $error="";
+    include('connect.php');
+    if(isset($_POST['username']) && isset($_POST['password'])){ 
+        $tenDangNhap = $_POST['username'];
+        $matKhau = $_POST['password'];
 
-      if(isset($_POST['username']) && isset($_POST['password'])){ 
-          $tenDangNhap = $_POST['username'];
-          $matKhau = $_POST['password'];
+        $sql = "SELECT * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
+        $result = mysqli_query($conn,$sql); 
+        if (mysqli_num_rows($result) > 0) { 
+            session_start();
+            $_SESSION["username"] = $tenDangNhap;
 
-          $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); 
-          if (mysqli_num_rows($result) > 0) { 
-              session_start();
-              $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
-          }
-          else{
-              echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
-          }
-      }
-    ?>
+            while($row = mysqli_fetch_array($result)){
+              if($row['idVaiTro'] == 1){
+                header('location: index.php?page_layout=listdiadanh'); 
+              }else{
+                header('location: index.php?page_layout=trangchu'); 
+              }
+            }
+        }
+        else{
+          $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
+        }
+    }
+  ?>
+
+<body style="background-image: url(asset/uploads/5.jpg);background-repeat: no-repeat;background-size: cover;">
+  <div class="container"  >
+      
+      <form action="login.php" method="post">
+          <h1>Đăng nhập </h1>
+          <div class="box">
+          <input type="text" name="username" placeholder="Ten dang nhap ">
+          </div>
+          <div class="box">
+          <input type="password" name="password" placeholder="Mat khau  ">
+          </div>
+          <div class="box">
+          <input  type="submit" value="Đăng nhập">
+          </div>
+
+          <?php if($error != ""): ?>
+            <p class="warning"><?= $error ?></p>
+          <?php endif; ?>
+          
+          <div id="register" style="border-top: 2px solid grey">  
+            <p > Bạn chưa có tài khoản?</p>
+            <a href="register.php"> Đăng ký </a> 
+          </div>
+          
+      </form>
+  </div>
+
 
   <script>
     const register = document.getElementById("register");
