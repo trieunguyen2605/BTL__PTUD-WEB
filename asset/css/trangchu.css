@@ -58,7 +58,7 @@ section{
 }
 
 .footer {
-  background: #4EB4F6;
+  background: #7cc5f6;
   padding: 40px 0;
   font-size: 14px;
   color: #333;
@@ -68,6 +68,7 @@ section{
   max-width: 1200px;
   margin: auto;
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
