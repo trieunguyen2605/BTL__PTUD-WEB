@@ -9,8 +9,15 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+<<<<<<< HEAD
         table {
             margin-top: 5px;
+=======
+        body{
+          margin-top: 86px;
+        }
+        table{
+>>>>>>> 68f0cb73ef14649c21aa14b7d4b2de9ab6097419
             width: 100%;
         }
 
