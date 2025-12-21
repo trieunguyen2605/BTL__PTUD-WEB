@@ -43,7 +43,7 @@
           border: 1px solid black;
           box-sizing: content;
           background-color:white;
-          opacity:0.5 ;
+          /* opacity:0.5 ; */
           
          text-align:center;
         }
