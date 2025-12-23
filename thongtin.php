@@ -6,7 +6,7 @@
   <title>Thông tin </title>
 </head>
 <style>
-  body{
+  /* body{
     background-image:<?php
     include('connect.php'); 
     $sql="SELECT *FROM `dia_diem` where id='$id'";
@@ -15,7 +15,7 @@
   ?>
     "<?php echo $row['anhDaiDien']; ?>"
   <?php } ?>;
-  }
+  } */
   main{
     margin-top: 100px;
     display:flex;
