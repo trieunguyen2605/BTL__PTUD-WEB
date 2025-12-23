@@ -10,7 +10,6 @@
         body{
            
             height: 100vh;
-            
             background-position: center;
                 }
         .container{
@@ -39,8 +38,6 @@
             border-radius: 8px;
             border: 1px solid #ccc;
             font-size: 14px;
-
-            
         }
 
        form {

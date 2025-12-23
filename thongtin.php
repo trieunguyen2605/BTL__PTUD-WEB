@@ -6,6 +6,16 @@
   <title>Thông tin </title>
 </head>
 <style>
+  body{
+    background-image:<?php
+    include('connect.php'); 
+    $sql="SELECT *FROM `dia_diem` where id='$id'";
+    $result = mysqli_query($conn,$sql);
+    while($row = mysqli_fetch_array($result)){
+  ?>
+    "<?php echo $row['anhDaiDien']; ?>"
+  <?php } ?>;
+  }
   main{
     margin-top: 100px;
     display:flex;
