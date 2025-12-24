@@ -22,9 +22,6 @@
             border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
-            /* display: flex;
-            justify-content: center;
-            justify-content: space-around; */
         }
         tr{
 
@@ -80,9 +77,7 @@
 
             <td>
                 <div >
-                    <div style=" display: flex;
-        justify-content: center;
-        justify-content: space-around;">
+                    <div style=" display: flex;justify-content: center;justify-content: space-around;">
                         <a  class="btn" href="index.php?page_layout=capnhatdiadanh&id=<?php echo $row['id'] ?>">Cap nhat</a>
                     </div>
                     <div>
