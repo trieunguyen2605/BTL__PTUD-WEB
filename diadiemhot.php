@@ -15,6 +15,7 @@
         <div class="hotPlace__list ">
           <?php
             include('connect.php'); 
+            // lấy ra các địa danh có LaTop=1(quy định của mình là : lopTop có hai giá trị 1 và 2 . nếu là 1 thì mới hiện ở mục top địa danh )
             $sql="SELECT * FROM `dia_diem` where laTop=1";
             $result = mysqli_query($conn,$sql);
             while($row = mysqli_fetch_array($result)){
@@ -28,6 +29,7 @@
           <?php
               }
           ?>
+          <!-- nếu không tìm thấy sản phẩm thì sẽ hiện ra dòng này  -->
           <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
         </div>
       </section>

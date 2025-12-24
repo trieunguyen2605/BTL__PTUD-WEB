@@ -8,7 +8,11 @@
   <link rel="stylesheet" href="asset/css/index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<style>
+
+</style>
 <body>
+  <!-- login -->
     <?php
       session_start();
       if(!isset($_SESSION["username"])){
@@ -16,7 +20,7 @@
       }
       include('connect.php'); 
     ?> 
-
+<!-- header -->
 <header>
   <div class="hd__wrap">
         <div class="hd__top">
@@ -55,6 +59,7 @@
                   <li class="hd__bottom-item">
                     
                     <div class="user">
+                      <!--  lấy ra và hiện tên người dùng trên header  -->
                       <?php
                         $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'";
                         $result = mysqli_query($conn,$sql);
@@ -62,12 +67,14 @@
                           echo "<div class='userName' href=''>Xin chào : {$row['tenNguoiDung']} </div>";
                         }
                       ?>
-  
+
+                      <!-- bảng hiện ra: đăng xuất và lits danh sách  -->
                       <div class="cn_user">
                         <ul class="user-list">
                           <li class="user_item">
                             <a class="hd__bottom-link_out" href="index.php?page_layout=dangxuat">Đăng xuất </a>
-                          </li>                    
+                          </li>              
+                          <!-- nếu là admin thì sẽ hiện mục này   -->
                           <?php
                             $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
                             $result = mysqli_query($conn,$sql);
@@ -90,6 +97,7 @@
       </div>  
     </header >
 
+    <!--  hiện phần tìm kiếm(có poster) : nếu là trang chủ, địa điểm hot, theo mùa , theo miền thì sẽ hiện ra  -->
     <?php
       if (isset($_GET['page_layout']) && (($_GET['page_layout'] == 'trangchu') || ($_GET['page_layout'] == 'diadiemhot')||($_GET['page_layout'] == 'theomua')||($_GET['page_layout'] == 'theomien') ) ){
         echo"
@@ -106,10 +114,10 @@
     ?>
 
     <?php
-       if(isset($_GET['page_layout'])){ // lấy thông tin thì ta dùng get 
+       if(isset($_GET['page_layout'])){  
           switch($_GET['page_layout']){
             case 'trangchu':
-              include "trangchu.php"; // gộp hai file lại với nhau 
+              include "trangchu.php"; 
               break;
             case 'gioithieu':
               include "gioithieu.php";
@@ -160,7 +168,7 @@
       }
     ?>
 
-
+<!-- phần tìm kiếm  -->
   <script>
     function search() {
         const input = document.getElementById("searchInput").value.toLowerCase().trim();
@@ -177,13 +185,13 @@
           } else {
               items[i].style.display = "none";
           }
+          if(ktra==false && input!==""){
+            no_search[i].style.display="block"
+          }else{
+            no_search[i].style.display="none";
+          }
         }
 
-        if(ktra==false && input!==""){
-          no_search[0].style.display="block"
-        }else{
-          no_search[0].style.display="none";
-        }
     }
 </script>
 </body>

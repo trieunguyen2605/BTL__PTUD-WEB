@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        main{
-            height:100vh;
-            width: 100%;
-            margin: 0,0;
-            background-image:url(asset/uploads/poster.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-        .container{
-          /* height:100vh; */
-          display:flex;
-          /* align-items:center; */
-          margin-top 150px;
-        }
-        form{
-          width: 20%;
-          /* height:50%; */
-          margin:auto;
-        }
-        input{
-          width: 70%;
-          margin:3px;
-          padding:5px;
-        
-        }
-        .box{
-          border-radius:5px;
-          border: 1px solid black;
-          box-sizing: content;
-          background-color:white;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+  main{
+      height:100vh;
+      width: 100%;
+      margin: 0,0;
+      background-image:url(asset/uploads/poster.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  .container{
+    /* height:100vh; */
+    display:flex;
+    /* align-items:center; */
+    margin-top 150px;
+  }
+  form{
+    width: 20%;
+    /* height:50%; */
+    margin:auto;
+  }
+  input{
+    width: 70%;
+    margin:3px;
+    padding:5px;
+  
+  }
+  .box{
+    border-radius:5px;
+    border: 1px solid black;
+    box-sizing: content;
+    background-color:white;
 
-          opacity:0.98 ;
-          text-align:center;
-          margin-top:150px;
-          
-        }
+    opacity:0.98 ;
+    text-align:center;
+    margin-top:150px;
+    
+  }
 
-        .btn{
-          width:249px;
-          background-color: #4eb4f6;
-          color:white;
-          font-size:15px;
-        }
-       
-    </style>
+  .btn{
+    width:249px;
+    background-color: #4eb4f6;
+    color:white;
+    font-size:15px;
+  }
+</style>
 </head>
 <body>
     <main>

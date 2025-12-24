@@ -149,3 +149,20 @@ section {
   color: #fff;
   font-size: 18px;
 }
+
+.section__hd-right{
+
+}
+
+.section__hd-right a{
+  text-decoration: none;
+  color: #7cc5f6;
+}
+
+.section__hd-right .section_logo {
+  color: #7cc5f6;
+}
+
+.section__hd-right:hover .section_right-link {
+  text-decoration: underline;
+}

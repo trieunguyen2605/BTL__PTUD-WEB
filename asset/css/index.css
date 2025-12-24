@@ -77,10 +77,22 @@ header{
   font-weight: 8;
 }
 
+.hd__info{
+  color: white;
+}
+
+.hd__top-wr{
+  color: white;
+}
+
 .hd__bottom-link{
   text-decoration: none;
   color: #000;
   font-size: 20px;
+}
+
+.hd__bottom-link:hover{
+  color: #0c92eb;
 }
 
 /* poster */
@@ -164,9 +176,10 @@ header{
   border-bottom: 1px solid #d9d6d6;
 }
 
-.user_item:hover{
-  background-color: #e3e2e2;
+.user_item:hover a{
+  color: #0c92eb;
 }
+
 
 .btn{
   white-space: nowrap;

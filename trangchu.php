@@ -51,11 +51,12 @@
         <div class="section__hd">
           <div class="content"> Sống để yêu thương </div>
           <div class="section__hd-right">
-            <a href="index.php?page_layout=theomua">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+            <a class="section_right-link" href="index.php?page_layout=theomua">Xem tất cả <i class="section_logo fa-solid fa-right-long"></i> </a>
           </div>
         </div>
         <div class="hotPlace__list ">
           <!-- sản phẩm  -->
+          <!-- ở đây là trang chủ chỉ lấy ra 3 cái  -->
           <?php
             $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 order by rand() LIMIT 1)
                     UNION
@@ -78,7 +79,7 @@
         </div>
       </section>
       
-      <!-- regions -->
+      <!-- regions: miền  -->
       <section>
         <h2 class="title"> Du lịch miền   </h2>
         <div class="section__hd">

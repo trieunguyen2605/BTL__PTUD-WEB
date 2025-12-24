@@ -7,49 +7,44 @@
   <title>login </title>
 </head>
 <style>
-        body{
-           
-            height: 100vh;
-            background-position: center;
-                }
-        .container{
-            
-            
-            margin:  auto;
-            width: 20%;
-            height:auto ;
-           background-color: rgba(255, 255, 255, 0.85);
-            /* background-color: rgba(198, 196, 196, 0.392); */
-            display:flex;
-            align-items: center; 
-            justify-content: center;
-            border-radius: 10px;
-            
-        }
-        .box{
-            display: flex;
-            justify-content: center;
-        }
-        .box input{
-            
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 14px;
-        }
+  body{
+    height: 100vh;
+    background-position: center;
+  }
+  .container{
+    margin:  auto;
+    width: 20%;
+    height:auto ;
+    background-color: rgba(255, 255, 255, 0.85);
+    /* background-color: rgba(198, 196, 196, 0.392); */
+    display:flex;
+    align-items: center; 
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .box{
+    display: flex;
+    justify-content: center;
+  }
+  .box input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
 
-       form {
-            text-align: center;
-        }
-        .warning{
-          font-size: 14px;
-          color: red;
-            text-align: center;
-        }
-       
-    </style>
+  form {
+    text-align: center;
+  }
+
+  .warning{
+    font-size: 14px;
+    color: red;
+    text-align: center;
+  }
+</style>
   <?php
     $error="";
     include('connect.php');
@@ -63,7 +58,8 @@
         if (mysqli_num_rows($result) > 0) { 
             session_start();
             $_SESSION["username"] = $tenDangNhap;
-            // header('location: index.php?page_layout=trangchu'); 
+
+            // nếu là tài khoản admin thì vào trang list địa điểm, nếu là khách thì nhảy vào trang chủ luôn 
             while($row = mysqli_fetch_array($result)){
               if($row['idVaiTro'] == 1){
                 header('location: index.php?page_layout=listdiadanh'); 
