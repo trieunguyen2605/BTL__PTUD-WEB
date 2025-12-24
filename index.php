@@ -149,12 +149,14 @@
     function search() {
         const input = document.getElementById("searchInput").value.toLowerCase();
         const items = document.getElementsByClassName("pl__item");
+        const wrap_item = document.getElementsByClassName("hotPlace__list");
         for (let i = 0; i < items.length; i++) {
           let name = items[i].getElementsByClassName("pl__name")[0].innerText.toLowerCase();
           if (name.includes(input)) {
               items[i].style.display = "block"; 
           } else {
               items[i].style.display = "none";
+              wrap_item[i].innerHTML ="<div class='no-search' style='font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>"
           }
         }
     }
