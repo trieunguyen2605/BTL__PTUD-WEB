@@ -13,9 +13,8 @@
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <div class="places">
+     <div class="container">
+       <div class="places">
       <!-- TOP -->
       <section>
         <h2 class="title"> Địa điểm hot </h2>

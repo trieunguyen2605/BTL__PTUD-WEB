@@ -9,7 +9,7 @@
   <?php $id =  $_GET['id']?>
   <main>
     <h1>Thêm địa danh Mới</h1>
-    <form action="index.php?page_layout=capnhatdiadanh" method="post" enctype="multipart/form-data">
+    <form action="index.php?page_layout=capnhatdiadanh&id" method="post" enctype="multipart/form-data">
             <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
                 <div class="row">
                     <div>
