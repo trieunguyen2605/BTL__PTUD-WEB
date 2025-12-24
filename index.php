@@ -79,7 +79,7 @@
         echo"
           <div class='poster'>
             <div class='hd__search'>
-              <input type='text' class='hd__input' placeholder='Tìm kiếm...' >
+              <input type='text' id='searchInput' oninput='search()' class='hd__input' placeholder='Tìm kiếm...' >
               <div class='hd__search-logo'>
                 <i class='fa-solid fa-magnifying-glass'></i>
               </div>
@@ -145,6 +145,19 @@
     ?>
 
 
-  <script src="script.js"></script>
+  <script>
+    function search() {
+        const input = document.getElementById("searchInput").value.toLowerCase();
+        const items = document.getElementsByClassName("pl__item");
+        for (let i = 0; i < items.length; i++) {
+          let name = items[i].getElementsByClassName("pl__name")[0].innerText.toLowerCase();
+          if (name.includes(input)) {
+              items[i].style.display = "block"; 
+          } else {
+              items[i].style.display = "none";
+          }
+        }
+    }
+</script>
 </body>
 </html>
