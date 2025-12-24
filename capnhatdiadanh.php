@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thêm Phim Mới</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm Phim Mới</title>
+    <style>
+        body{
+            margin:10%;
+        }
+        main{
+            
+            margin: auto;
+        }
+        
+         form,
+        h1 {
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            margin: auto;
+        }
+
+        input {
+            border: 2px solid rgb(110, 126, 19);
+            border-radius: 5px;
+        }
+        .warning{
+           
+          color: red;
+            text-align: center;
+        }
+    </style>
 </head>
 <body >
-  <?php $id =  $_GET['id']?>
-  <main>
-    <h1>Thêm địa danh Mới</h1>
-    <form action="index.php?page_layout=capnhatdiadanh" method="post" enctype="multipart/form-data">
+    <?php $id = $_GET['id']?>
+    <main>
+        <h1>Cập nhật</h1>
+        <form action="index.php?page_layout=capnhatdiadanh&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
             <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
                 <div class="row">
                     <div>
@@ -66,13 +99,12 @@
                 </div>
                 <br>
                 <div class="row" style="margin-bottom: 10px;">
-                    <input type="submit" value="Thêm địa danh ">
+                    <input type="submit" value="Cập nhật ">
                 </div>
             </div>
         </form>
 
         <?php
-                include('connect.php');
                 if( !empty($_POST['tendiadiem'])&& 
                     !empty($_POST['noidung']) &&
                     !empty($_POST['vungmien']) &&
@@ -85,6 +117,8 @@
                         $laTop= $_POST['latop'];
                 #Bắt đầu xử lý thêm ảnh
                 // Xử lý ảnh
+                
+                if (!empty($_FILES['fileToUpload']['name'])) {
                 $target_dir = "asset/uploads/";
                 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         
@@ -92,7 +126,7 @@
                 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         
                 // Kiểm tra xem file ảnh có hợp lệ không
-                if(isset($_POST["submit"])) {
+                // if(isset($_POST["submit"])) {
                     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
                     if($check !== false) {
                         $uploadOk = 1;
@@ -100,27 +134,31 @@
                         echo "File không phải là ảnh.";
                         $uploadOk = 0;
                     }
-                }
-        
-                // Kiểm tra nếu file đã tồn tại
-                if (file_exists($target_file)) {
-                    echo "File này đã tồn tại trên hệ thông";
-                    $uploadOk = 2;
-                }
-        
-                // Kiểm tra kích thước file
-                if ($_FILES["fileToUpload"]["size"] > 500000) {
-                    echo "File quá lớn";
-                    $uploadOk = 0;
-                }
-        
-                // Cho phép các định dạng file ảnh nhất định
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif" ) {
+                // }
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
                     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
                     $uploadOk = 0;
                 }
                 echo "3";
+                }
+                // // Kiểm tra nếu file đã tồn tại
+                // if (file_exists($target_file)) {
+                //     echo "File này đã tồn tại trên hệ thông";
+                //     $uploadOk = 2;
+                // }
+        
+                // // Kiểm tra kích thước file
+                // if ($_FILES["fileToUpload"]["size"] > 500000) {
+                //     echo "File quá lớn";
+                //     $uploadOk = 0;
+                // }
+        
+                // Cho phép các định dạng file ảnh nhất định
+                // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                //     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
+                //     $uploadOk = 0;
+                // }
+                // echo "3";
 
                 #Kết thúc xử lý ảnh
                 if($uploadOk == 0){
@@ -129,16 +167,20 @@
                 else{
                     //Code logic cũ để xử lý insert DB
                     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-                      $sql = "UPDATE `dia_diem` set 
-                          `tenDiaDiem`='$tenDiaDiem', `noiDung`='$noiDung', `anhDaiDien`='$target_file', `idVungMien`='$vungMien', `idMua`= '$mua',`laTop`= '$laTop' where id='$id'";
-                      mysqli_query($conn, $sql);
-                      echo '<script>window.location.href = "index.php?page_layout=listdiadanh";</script>';
+                        $sql = "UPDATE `dia_diem` SET `tenDiaDiem`='$tenDiaDiem',`noiDung`='$noiDung',`anhDaiDien`='$target_file',`idVungMien`='$vungMien',`idMua`='$mua',`laTop`='$laTop' where id='$id'";
+                        // echo $sql;
+                        mysqli_query($conn, $sql);
+
+                        echo '<script>window.location.href = "index.php?page_layout=listdiadanh";</script>';
+                        
                     }   
                 }
-                }
+            }
                 else{
+                    // // Không chọn ảnh → giữ ảnh cũ
+                    //  $target_file = null;
                     echo "<p class='warning'>Vui lòng nhập đủ thông tin !!</p>";
-                    // echo " Vui lòng nhập  đủ thông tin "; 
+                    // // echo " Vui lòng nhập  đủ thông tin "; 
                 }
         ?>
     </main>
