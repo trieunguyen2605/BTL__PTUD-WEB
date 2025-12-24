@@ -185,13 +185,17 @@
           } else {
               items[i].style.display = "none";
           }
-          if(ktra==false && input!==""){
-            no_search[i].style.display="block"
-          }else{
-            no_search[i].style.display="none";
-          }
+          
         }
 
+        for (let i = 0; i < no_search.length; i++) {
+            if (ktra === false && input !== "") {
+                no_search[i].style.display = "block";
+            } else {
+                no_search[i].style.display = "none";
+            }
+        }
+    
     }
 </script>
 </body>
