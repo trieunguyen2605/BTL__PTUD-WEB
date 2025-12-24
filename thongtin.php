@@ -15,6 +15,8 @@
   ?>
     "<?php echo $row['anhDaiDien']; ?>"
   <?php } ?>;
+  background-size: cover;
+  background-repeat: no-repeat;
   } */
   main{
     margin-top: 100px;

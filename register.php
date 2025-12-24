@@ -11,7 +11,6 @@
             margin: 0,0;
             background-image:url(asset/uploads/poster.jpg);
             background-size: cover;
-
             background-repeat: no-repeat;
         }
         .container{

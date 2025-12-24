@@ -18,6 +18,11 @@
   margin-bottom: 20px;
 }
 
+.title,
+.content{
+  color: #7cc5f6;
+}
+
 section {
   margin-bottom: 40px;
 }
@@ -45,13 +50,22 @@ section {
 .pl__img {
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.pl__item:hover{
+  color:#7cc5f6;
+}
+
+.pl__item:hover img{
+  transform: scale(1.1);
 }
 
 .pl__img img {
   width: 100%;
   height: 258px;
   /* margin:0 5px; */
-  border-radius: 20px;
 }
 
 .pl__name {
