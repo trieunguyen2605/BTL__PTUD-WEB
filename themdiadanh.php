@@ -80,12 +80,12 @@
                         <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="mua">
                             <option value="">-- Chọn Mùa --</option>
                             <?php
-                            $sqlTL = "SELECT * FROM mua_du_lich";
-                            $resultM = mysqli_query($conn, $sqlTL);
-                            while($rowM = mysqli_fetch_array($resultM)){
-                            echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
+                              $sqlTL = "SELECT * FROM mua_du_lich";
+                              $resultM = mysqli_query($conn, $sqlTL);
+                              while($rowM = mysqli_fetch_array($resultM)){
+                              echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
                             }
-                        ?>
+                            ?>
                         </select>
                     </div>
 

@@ -40,19 +40,19 @@
               </div>
               <ul class="hd__bottom-list">
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=trangchu">Trang chủ</a>
+                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=trangchu">Trang chủ</a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=gioithieu">Giới thiệu </a>
+                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=gioithieu">Giới thiệu </a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=diadiemhot">Các địa điểm HOT</a>
+                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=diadiemhot">Các địa điểm HOT</a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=theomien">Du lịch theo miền </a>
+                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=theomien">Du lịch theo miền </a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=theomua">Du lịch theo mùa </a>
+                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=theomua">Du lịch theo mùa </a>
                   </li>
               </ul>
               <ul>
@@ -168,8 +168,8 @@
       }
     ?>
 
-<!-- phần tìm kiếm  -->
-  <script>
+<script>
+    // <!-- phần tìm kiếm  -->
     function search() {
         const input = document.getElementById("searchInput").value.toLowerCase().trim();
         const items = document.getElementsByClassName("pl__item");
@@ -195,8 +195,19 @@
                 no_search[i].style.display = "none";
             }
         }
-    
     }
+    // <!-- ấn  -->
+    // const headLink = document.querySelectorAll(".hd__bottom-link");
+
+    // headLink.forEach(item => {
+    //   item.addEventListener("click",(e)=>{
+    //     headLink.forEach(element => {
+    //       element.style.color="";
+    //     });
+    //     item.style.color = "#0c92eb"
+    //   })
+    // });
+    
 </script>
 </body>
 </html>

@@ -22,7 +22,7 @@
         <div class="section__hd">
           <div class="content"> Sống để yêu thương </div>
           <div class="section__hd-right">
-            <a href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+            <a class="section_right-link" href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
           </div>
         </div>
         <div class="hotPlace__list ">
@@ -85,7 +85,7 @@
         <div class="section__hd">
           <div class="content"> Sống để yêu thương </div>
           <div class="section__hd-right">
-            <a href="index.php?page_layout=theomien">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
+            <a class="section_right-link" href="index.php?page_layout=theomien">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
           </div>
         </div>
         <div class="hotPlace__list ">
