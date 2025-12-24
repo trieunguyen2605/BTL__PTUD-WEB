@@ -70,6 +70,13 @@ header{
   list-style: none;
 }
 
+.userName{
+  text-decoration: none;
+  color: #0c92eb;
+  font-size: 20px;
+  font-weight: 8;
+}
+
 .hd__bottom-link{
   text-decoration: none;
   color: #000;
@@ -114,3 +121,54 @@ header{
   transform: translateY(-32%);
   font-size: 20px;
 }
+
+.user{
+  position: relative;
+}
+
+.user:hover .cn_user{
+  display: block;
+}
+
+.cn_user{
+  display: none;
+  position: absolute;  
+  top: 100%;
+  right: 0;
+  width: 150px;
+  background-color: #fff;
+  box-shadow: 0 0 6px #e4e2e2;
+  padding-right: 2px;
+}
+
+.btn{
+  margin-top: 10px;
+}
+
+.user-list{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user_item{
+  padding: 10px 8px 10px;
+  font-size: 16px;
+}
+
+.user_item a{
+  color: #000;
+  text-decoration: none;
+}
+.user_item:nth-child(1){
+  /* padding-bottom: 6px; */
+}
+
+.user_item:hover{
+  background-color: #e3e2e2;
+}
+
+.btn{
+  white-space: nowrap;
+}
+

@@ -50,27 +50,33 @@
         }
        
     </style>
-<!-- <?php
+  <?php
     $error="";
-      include('connect.php');
+    include('connect.php');
 
-      if(isset($_POST['username']) && isset($_POST['password'])){ 
-          $tenDangNhap = $_POST['username'];
-          $matKhau = $_POST['password'];
+    if(isset($_POST['username']) && isset($_POST['password'])){ 
+        $tenDangNhap = $_POST['username'];
+        $matKhau = $_POST['password'];
 
-          $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); 
-          if (mysqli_num_rows($result) > 0) { 
-              session_start();
-              $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
-          }
-          else{
-            $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
-            //   echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
-          }
-      }
-    ?> -->
+        $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
+        $result = mysqli_query($conn,$sql); 
+        if (mysqli_num_rows($result) > 0) { 
+            session_start();
+            $_SESSION["username"] = $tenDangNhap;
+            // header('location: index.php?page_layout=trangchu'); 
+            while($row = mysqli_fetch_array($result)){
+              if($row['idVaiTro'] == 1){
+                header('location: index.php?page_layout=listdiadanh'); 
+              }else{
+                header('location: index.php?page_layout=trangchu'); 
+              }
+            }
+        }
+        else{
+          $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
+        }
+    }
+  ?>
 <body style="background-image: url(asset/uploads/poster.jpg);background-repeat: no-repeat;background-size: cover;">
         <div class="container"  >
             
@@ -95,41 +101,8 @@
                 <p > Bạn chưa có tài khoản?</p>
                 <a href="register.php"> Đăng ký </a> 
                 </div>
-                 
             </form>
-            
-            <!-- <div id="register">
-                <a href="register.php">Đăng ký </a>
-            </div> -->
         </div>
-      
-  <?php
-    $error="";
-      include('connect.php');
-
-      if(isset($_POST['username']) && isset($_POST['password'])){ 
-          $tenDangNhap = $_POST['username'];
-          $matKhau = $_POST['password'];
-
-          $sql = "select * from nguoi_dung where tenDangNhap = '$tenDangNhap' and matkhau = '$matKhau'";
-          $result = mysqli_query($conn,$sql); 
-          if (mysqli_num_rows($result) > 0) { 
-              session_start();
-              $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
-          }
-          else{
-            $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
-              // echo "<p class='warning'>Tên đăng nhập hoặc mật khẩu không chính xác!</p>";
-          }
-      }
-    ?>
-
-  <script>
-    const register = document.getElementById("register");
-    
-  </script>
 </div>
 </body>
-
 </html>

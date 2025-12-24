@@ -59,11 +59,12 @@
           <div class="box">
           <h1>Register</h1>
             <div>
-                
                 <input name="tendangnhap" type="text" placeholder="tên đăng nhập">
             </div>
             <div>
-                
+                <input name="tenTk" type="text" placeholder="tên tài khoản ">
+            </div>
+            <div>
                 <input name="matkhau" type="password" placeholder="mật khẩu">
             </div>
             <div>
@@ -88,12 +89,14 @@
             <?php
             if(!empty($_POST['tendangnhap']) &&
             !empty($_POST['matkhau']) &&
+            !empty($_POST['tenTk']) &&
             !empty($_POST['vaitro'])){
                 $tenDangNhap = $_POST['tendangnhap'];
                 $matKhau = $_POST['matkhau'];
                 $vaiTro = $_POST['vaitro'];
+                $tenNguoiDung = $_POST['tenTk'];
 
-                $sql="INSERT INTO `nguoi_dung`(`tenDangNhap`, `matKhau`,`idVaiTro`) VALUES ('$tenDangNhap','$matKhau','$vaiTro')";
+                $sql="INSERT INTO `nguoi_dung`(`tenDangNhap`, `matKhau`,`idVaiTro`,`tenNguoiDung`) VALUES ('$tenDangNhap','$matKhau','$vaiTro','$tenNguoiDung')";
                 // echo $sql;
                 mysqli_query($conn, $sql);
                 header('location:login.php');

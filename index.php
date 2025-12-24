@@ -53,20 +53,36 @@
               </ul>
               <ul>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" href="index.php?page_layout=dangxuat">Đăng xuất </a>
-                    <!-- <a class="hd__bottom-link" href="index.php?page_layout=register">register </a> -->
                     
-                    <?php
-                      $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
-                      $result = mysqli_query($conn,$sql);
-                      while($row = mysqli_fetch_array($result)){
-                        if($row['idVaiTro']==1){
-                          echo"<div class='admin__list'>
-                                <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
-                              </div>";
+                    <div class="user">
+                      <?php
+                        $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'";
+                        $result = mysqli_query($conn,$sql);
+                        while($row = mysqli_fetch_array($result)){
+                          echo "<div class='userName' href=''>Xin chào : {$row['tenNguoiDung']} </div>";
                         }
-                      }
-                    ?>
+                      ?>
+  
+                      <div class="cn_user">
+                        <ul class="user-list">
+                          <li class="user_item">
+                            <a class="hd__bottom-link_out" href="index.php?page_layout=dangxuat">Đăng xuất </a>
+                          </li>                    
+                          <?php
+                            $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
+                            $result = mysqli_query($conn,$sql);
+                            while($row = mysqli_fetch_array($result)){
+                              if($row['idVaiTro']==1){
+                                echo"<li class='user_item'>
+                                      <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
+                                    </li>";
+                              }
+                            }
+                          ?> 
+                        </ul>
+                      </div>
+                    </div>
+
                   </li>
               </ul>
             </div>
