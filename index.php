@@ -147,17 +147,26 @@
 
   <script>
     function search() {
-        const input = document.getElementById("searchInput").value.toLowerCase();
+        const input = document.getElementById("searchInput").value.toLowerCase().trim();
         const items = document.getElementsByClassName("pl__item");
         const wrap_item = document.getElementsByClassName("hotPlace__list");
+        const no_search = document.getElementsByClassName("no-search");
+        let ktra = false;
+
         for (let i = 0; i < items.length; i++) {
           let name = items[i].getElementsByClassName("pl__name")[0].innerText.toLowerCase();
-          if (name.includes(input)) {
+          if (name.includes(input)|| input === ""  ) {
               items[i].style.display = "block"; 
+              ktra = true;
           } else {
               items[i].style.display = "none";
-              wrap_item[i].innerHTML ="<div class='no-search' style='font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>"
           }
+        }
+
+        if(ktra==false && input!==""){
+          no_search[0].style.display="block"
+        }else{
+          no_search[0].style.display="none";
         }
     }
 </script>

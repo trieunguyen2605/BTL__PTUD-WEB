@@ -28,6 +28,7 @@
           <?php
               }
           ?>
+          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
         </div>
       </section>
     </div>

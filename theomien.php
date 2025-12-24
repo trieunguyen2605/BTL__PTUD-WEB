@@ -38,6 +38,7 @@
               echo '<div class="no-place">Chưa có địa điểm!</div>';
             }
           ?>
+          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
         </div>
       </section>
       <section>
@@ -68,6 +69,7 @@
               echo '<div class="no-place">Chưa có địa điểm!</div>';
             }
           ?>
+          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
         </div>
       </section>
       <section>
@@ -98,6 +100,7 @@
               echo '<div class="no-place">Chưa có địa điểm!</div>';
             }
           ?>
+          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
         </div>
       </section>
     </div>
