@@ -161,7 +161,7 @@ header{
   text-decoration: none;
 }
 .user_item:nth-child(1){
-  /* padding-bottom: 6px; */
+  border-bottom: 1px solid #d9d6d6;
 }
 
 .user_item:hover{
