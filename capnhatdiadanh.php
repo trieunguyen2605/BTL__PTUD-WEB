@@ -39,13 +39,10 @@
     </style>
 </head>
 <body >
-
-
     <?php $id = $_GET['id']?>
     <main>
         <h1>Cập nhật</h1>
         <form action="index.php?page_layout=capnhatdiadanh&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
-
             <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
                 <div class="row">
                     <div>
