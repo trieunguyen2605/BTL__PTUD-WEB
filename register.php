@@ -98,7 +98,7 @@
                 $sql="INSERT INTO `nguoi_dung`(`tenDangNhap`, `matKhau`,`idVaiTro`,`tenNguoiDung`) VALUES ('$tenDangNhap','$matKhau','$vaiTro','$tenNguoiDung')";
                 // echo $sql;
                 mysqli_query($conn, $sql);
-                header('location:login.php');
+                echo "<script>window.location.href='login.php';</script>";
             }
             else{
                 echo "</br>Vui long nhap day du thong tin</br></br>";
