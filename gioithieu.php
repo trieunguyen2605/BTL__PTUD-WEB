@@ -26,7 +26,7 @@
               <p class="in__text">
                 Việt Nam là một đất nước sở hữu vẻ đẹp thiên nhiên phong phú và nền văn hóa đa dạng, tạo nên sức hút đặc biệt đối với du khách trong và ngoài nước. Từ những dãy núi rừng hùng vĩ ở vùng Tây Bắc, cao nguyên lộng gió ở Tây Nguyên cho đến những bãi biển trong xanh, trải dài dọc theo miền Trung và miền Nam, mỗi vùng đất đều mang trong mình một nét đẹp riêng biệt, vừa hoang sơ vừa quyến rũ. Bên cạnh cảnh quan thiên nhiên, Việt Nam còn nổi bật với bề dày lịch sử và truyền thống văn hóa lâu đời, thể hiện qua các lễ hội, làng nghề truyền thống và những công trình kiến trúc mang đậm dấu ấn dân tộc.
 
-Cùng với đó, nền ẩm thực phong phú, đa dạng từ những món ăn dân dã đến các đặc sản vùng miền độc đáo góp phần làm nên những trải nghiệm khó quên. Với sự hòa quyện hài hòa giữa giá trị truyền thống và nhịp sống hiện đại, Việt Nam ngày càng khẳng định vị thế của mình trên bản đồ du lịch thế giới, trở thành điểm đến hấp dẫn.
+                Cùng với đó, nền ẩm thực phong phú, đa dạng từ những món ăn dân dã đến các đặc sản vùng miền độc đáo góp phần làm nên những trải nghiệm khó quên. Với sự hòa quyện hài hòa giữa giá trị truyền thống và nhịp sống hiện đại, Việt Nam ngày càng khẳng định vị thế của mình trên bản đồ du lịch thế giới, trở thành điểm đến hấp dẫn.
               </p>
             </div>
             <div class="in__right">
