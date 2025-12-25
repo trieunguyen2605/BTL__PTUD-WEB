@@ -1,3 +1,36 @@
+<?php
+include('connect.php');
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (
+        !empty($_POST['tendangnhap']) &&
+        !empty($_POST['tenTk']) &&
+        !empty($_POST['matkhau'])
+    ) {
+
+        $tenDangNhap = $_POST['tendangnhap'];
+        $tenNguoiDung = $_POST['tenTk'];
+        $matKhau = $_POST['matkhau'];
+
+        // MẶC ĐỊNH LÀ NGƯỜI DÙNG
+        $idVaiTro = 2;
+
+        $sql = "INSERT INTO nguoi_dung 
+                (tenDangNhap, matKhau, idVaiTro, tenNguoiDung) 
+                VALUES ('$tenDangNhap', '$matKhau', '$idVaiTro', '$tenNguoiDung')";
+
+        if (mysqli_query($conn, $sql)) {
+            header("Location: login.php");
+        } else {
+            $error = "Lỗi SQL: " . mysqli_error($conn);
+        }
+
+    } else {
+        $error = "Vui lòng nhập đầy đủ thông tin";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,43 +100,13 @@
                 <input name="matkhau" type="password" placeholder="mật khẩu">
             </div>
             <div>
-              <br>
-                Vai tro
-                <select name = "vaitro">
-                    <?php
-                    include('connect.php'); // phải có cái này thì mới lấy đc dữ liệu 
-                        $sql = "SELECT * FROM `vai_tro`";
-                        $result = mysqli_query($conn,$sql);
-                        while($vai_Tro = mysqli_fetch_array($result)){
-                    ?>
-                        <option value = "<?php echo($vai_Tro['id']);?>"><?php echo ($vai_Tro['vaiTro']);?></option>";
-                    <?php
-                      }
-                    ?>
-                </select>
-            </div>
-            <div>
                 <input type="submit" value="Đăng Ký ">
             </div>
             <?php
-            if(!empty($_POST['tendangnhap']) &&
-            !empty($_POST['matkhau']) &&
-            !empty($_POST['tenTk']) &&
-            !empty($_POST['vaitro'])){
-                $tenDangNhap = $_POST['tendangnhap'];
-                $matKhau = $_POST['matkhau'];
-                $vaiTro = $_POST['vaitro'];
-                $tenNguoiDung = $_POST['tenTk'];
-
-                $sql="INSERT INTO `nguoi_dung`(`tenDangNhap`, `matKhau`,`idVaiTro`,`tenNguoiDung`) VALUES ('$tenDangNhap','$matKhau','$vaiTro','$tenNguoiDung')";
-                // echo $sql;
-                mysqli_query($conn, $sql);
-                echo "<script>window.location.href='login.php';</script>";
-            }
-            else{
-                echo "</br>Vui long nhap day du thong tin</br></br>";
-            }
-        ?>
+              if (!empty($error)) {
+                  echo "<p style='color:red'>$error</p>";
+              }
+            ?>
         </div>
         </form>
         </div>

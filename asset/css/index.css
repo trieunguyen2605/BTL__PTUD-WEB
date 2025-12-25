@@ -156,6 +156,7 @@ header {
   position: absolute;
   top: 100%;
   right: 0;
+  /* width: 100%; */
   width: 170px;
   background-color: #fff;
   box-shadow: 0 0 6px #e4e2e2;
