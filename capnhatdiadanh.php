@@ -45,66 +45,70 @@
     <main>
         <h1>Cập nhật</h1>
         <form action="index.php?page_layout=capnhatdiadanh&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+            <?php
+              include('connect.php');
+              $sql="SELECT* from `dia_diem` where id='$id'";
+              $result1 = mysqli_query($conn,$sql);
+              while($row1 = mysqli_fetch_array($result1)){
+            ?>
+              <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
+                  <div class="row">
+                      <div>
+                          <p>Tên địa điểm: </p>
+                          <input value="<?php echo $row1['tenDiaDiem'] ?>" name="tendiadiem" type="text">
+                      </div>
 
-            <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
-                <div class="row">
-                    <div>
-                        <p>Tên địa điểm: </p>
-                        <input name="tendiadiem" type="text">
-                    </div>
+                      <div>
+                          <p>Nội dung:</p>
+                          <textarea   style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;"name="noidung"><?php echo $row1['tenDiaDiem'] ?> </textarea>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div>
+                          <p>Ảnh đại diện: </p>
+                          <input value="<?php echo $row1['anhDaiDien'] ?>"  type="file" name="fileToUpload" id="fileToUpload">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div>
+                          <p>Vùng miền: </p>
+                          <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="vungmien">
+                              <option value="">-- Chọn vùng miền --</option>
+                              <?php
+                              $sqlQG = "SELECT * FROM vung_mien";
+                              $resultVM = mysqli_query($conn, $sqlQG);
+                              while($rowVM = mysqli_fetch_array($resultVM)){
+                                  echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
+                              }
+                          ?>
+                          </select>
+                      </div>
 
-                    <div>
-                        <p>Nội dung:</p>
-                        <textarea style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;"
-                            name="noidung"></textarea>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <p>Ảnh đại diện: </p>
-                        <input type="file" name="fileToUpload" id="fileToUpload">
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <p>Vùng miền: </p>
-                        <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="vungmien">
-                            <option value="">-- Chọn vùng miền --</option>
-                            <?php
-                            include('connect.php'); 
-                            $sqlQG = "SELECT * FROM vung_mien";
-                            $resultVM = mysqli_query($conn, $sqlQG);
-                            while($rowVM = mysqli_fetch_array($resultVM)){
-                                echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
-                            }
-                        ?>
-                        </select>
-                    </div>
+                      <div>
+                          <p>Mùa: </p>
+                          <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="mua">
+                              <option value="">-- Chọn Mùa --</option>
+                              <?php
+                              $sqlTL = "SELECT * FROM mua_du_lich";
+                              $resultM = mysqli_query($conn, $sqlTL);
+                              while($rowM = mysqli_fetch_array($resultM)){
+                              echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
+                              }
+                          ?>
+                          </select>
+                      </div>
 
-                    <div>
-                        <p>Mùa: </p>
-                        <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="mua">
-                            <option value="">-- Chọn Mùa --</option>
-                            <?php
-                            $sqlTL = "SELECT * FROM mua_du_lich";
-                            $resultM = mysqli_query($conn, $sqlTL);
-                            while($rowM = mysqli_fetch_array($resultM)){
-                            echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
-                            }
-                        ?>
-                        </select>
-                    </div>
-
-                    <div>
-                        <p>TOP:</p>
-                        <input name="latop" type="text">
-                    </div>
-                </div>
-                <br>
-                <div class="row" style="margin-bottom: 10px;">
-                    <input type="submit" value="Cập nhật ">
-                </div>
-            </div>
+                      <div>
+                          <p>TOP:</p>
+                          <input value="<?php echo $row1['laTop'] ?>"  name="latop" type="text">
+                      </div>
+                  </div>
+                  <br>
+                  <div class="row" style="margin-bottom: 10px;">
+                      <input type="submit" value="Cập nhật ">
+                  </div>
+              </div>
+            <?php } ?>
         </form>
 
         <?php
@@ -129,39 +133,19 @@
                 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         
                 // Kiểm tra xem file ảnh có hợp lệ không
-                // if(isset($_POST["submit"])) {
-                    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-                    if($check !== false) {
-                        $uploadOk = 1;
-                    } else {
-                        echo "File không phải là ảnh.";
-                        $uploadOk = 0;
-                    }
-                // }
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if($check !== false) {
+                    $uploadOk = 1;
+                } else {
+                    echo "File không phải là ảnh.";
+                    $uploadOk = 0;
+                }
                 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
                     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
                     $uploadOk = 0;
                 }
                 echo "3";
                 }
-                // // Kiểm tra nếu file đã tồn tại
-                // if (file_exists($target_file)) {
-                //     echo "File này đã tồn tại trên hệ thông";
-                //     $uploadOk = 2;
-                // }
-        
-                // // Kiểm tra kích thước file
-                // if ($_FILES["fileToUpload"]["size"] > 500000) {
-                //     echo "File quá lớn";
-                //     $uploadOk = 0;
-                // }
-        
-                // Cho phép các định dạng file ảnh nhất định
-                // if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
-                //     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
-                //     $uploadOk = 0;
-                // }
-                // echo "3";
 
                 #Kết thúc xử lý ảnh
                 if($uploadOk == 0){

@@ -199,17 +199,6 @@
             }
         }
     }
-    // <!-- ấn  -->
-    // const headLink = document.querySelectorAll(".hd__bottom-link");
-
-    // headLink.forEach(item => {
-    //   item.addEventListener("click",(e)=>{
-    //     headLink.forEach(element => {
-    //       element.style.color="";
-    //     });
-    //     item.style.color = "#0c92eb"
-    //   })
-    // });
     
 </script>
 </body>
