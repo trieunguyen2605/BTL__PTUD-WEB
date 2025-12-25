@@ -59,14 +59,14 @@
   ?>
     <main>
       <div class="container">
-        <div class=trai>
+        <div class="trai">
             <div class="img" style="margin-top: 10px">
               <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
             </div>
         
             <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
         </div>
-        <div class=phai>
+        <div class="phai">
             <div class="nd__content" style="margin: 10px 10px 0 0;">
                 <?php echo $row['noiDung']; ?>
             </div>

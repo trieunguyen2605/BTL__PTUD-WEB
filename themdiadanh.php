@@ -42,7 +42,7 @@
 <body >
     <h1>Thêm địa danh Mới</h1>
     <form action="index.php?page_layout=themdiadanh" method="post" enctype="multipart/form-data">
-            <div style=" width:50%;border:2px solid rgba(10, 137, 135, 1); border-radius: 5px;background-color:rgba(249, 248, 243, 1);">
+            <div style=" width:660px;border:2px solid rgba(10, 137, 135, 1); border-radius: 5px;background-color:rgba(249, 248, 243, 1);">
                 <div class="row">
                     <div>
                         <p>Tên địa điểm: </p>

@@ -15,6 +15,9 @@
           margin-top: 86px;
           background-color:#EAF8FB;
         }
+        h1{
+            text-align: center;
+        }
         table{
             border-radius:5px;
             background-color:white;
