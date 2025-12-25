@@ -61,26 +61,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     width: 70%;
     margin:3px;
     padding:5px;
+    border-radius:5px;
   
   }
   .box{
     border-radius:5px;
-    border: 1px solid black;
+    border: 1px solid white;
     box-sizing: content;
-    background-color:white;
+    background-color:rgba(255, 255, 255, 0.92);
 
     opacity:0.98 ;
     text-align:center;
     margin-top:150px;
-    
+    height: 250px;
   }
 
-  .btn{
-    width:249px;
-    background-color: #4eb4f6;
-    color:white;
-    font-size:15px;
-  }
+  
 </style>
 </head>
 <body>
@@ -89,18 +85,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         <form action="index.php?page_layout=register" method="post">
           <div class="box">
-          <h1>Register</h1>
+          <h1>Đăng ký</h1>
             <div>
-                <input name="tendangnhap" type="text" placeholder="tên đăng nhập">
+                <input name="tendangnhap" type="text" placeholder="Ten dang nhap">
             </div>
             <div>
-                <input name="tenTk" type="text" placeholder="tên tài khoản ">
+                <input name="tenTk" type="text" placeholder="Ten tai khoan">
             </div>
             <div>
-                <input name="matkhau" type="password" placeholder="mật khẩu">
+                <input name="matkhau" type="password" placeholder="Mat khau">
             </div>
             <div>
-                <input type="submit" value="Đăng Ký ">
+                <input style=" background-color: #5a8f29; " type="submit" value="Đăng Ký ">
             </div>
             <?php
               if (!empty($error)) {
