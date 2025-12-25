@@ -13,7 +13,17 @@
   </style>
 </head>
 <body style="background-color: #EAF8FB;">
+  
   <div class="container">
+    <div class="info-short">
+      <div class="info_value">
+        <div class="short-content">Khám phá Việt Nam cùng</div>
+        <div class="short-content">GO VIỆT</div>
+      </div>
+      <div class="info-short__img">
+        <img src="asset/uploads/gioithieuchung.png" alt="">
+      </div>
+    </div>
     
     <div class="places">
         <!-- TOP -->

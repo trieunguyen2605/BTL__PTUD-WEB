@@ -30,6 +30,11 @@
     width: calc((100% - 20px) / 3);
     margin-bottom: 20px;
     cursor: pointer;
+
+    border-radius: 20px;
+    box-shadow: 0 0 10px #ababab;
+    overflow: hidden;
+    padding-bottom: 10px;
   }
 
   .pl__item:hover {
@@ -49,7 +54,6 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border-radius: 20px;
   }
 
   .pl__img img {
@@ -61,4 +65,5 @@
     text-align: center;
     font-size: 18px;
     font-weight: 500;
+    margin-top: 10px;
   }

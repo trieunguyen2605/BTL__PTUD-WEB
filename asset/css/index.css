@@ -76,6 +76,14 @@ header {
   color: #0c92eb;
   font-size: 20px;
   font-weight: 8;
+  border: 3px solid #4EB4F6;
+  padding: 4px 16px;
+  border-radius:50px;
+}
+
+.userName:hover{
+  background-color: #4EB4F6;
+  color: #fff;
 }
 
 .hd__info {
@@ -148,7 +156,7 @@ header {
   position: absolute;
   top: 100%;
   right: 0;
-  width: 150px;
+  width: 170px;
   background-color: #fff;
   box-shadow: 0 0 6px #e4e2e2;
   padding-right: 2px;
