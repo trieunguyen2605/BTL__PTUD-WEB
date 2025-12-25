@@ -43,10 +43,10 @@
           <div class="box">
             <h1>Quên mật khẩu</h1>
             <div>
-                <input name="tendangnhap" type="text" placeholder="tên đăng nhập">
+                <input name="tendangnhap" type="text" placeholder="Ten dang nhap">
             </div>
             <div>
-                <input name="matkhau" type="password" placeholder="mật khẩu mới">
+                <input name="matkhau" type="password" placeholder="Mat khau moi">
             </div>
             <div>
                 <input type="submit" value="Xác nhận">

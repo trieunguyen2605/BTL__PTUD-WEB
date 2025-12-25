@@ -39,12 +39,11 @@
     </style>
 </head>
 <body >
-
-
     <?php $id = $_GET['id']?>
     <main>
         <h1>Cập nhật</h1>
         <form action="index.php?page_layout=capnhatdiadanh&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
+
             <?php
               include('connect.php');
               $sql="SELECT* from `dia_diem` where id='$id'";
@@ -83,6 +82,7 @@
                           ?>
                           </select>
                       </div>
+>>>>>>> d6ea21b0cf1c547208f4a0b1af854590547cf6fd
 
                       <div>
                           <p>Mùa: </p>

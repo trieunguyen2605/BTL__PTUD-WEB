@@ -26,13 +26,18 @@
 
   .container{
     width:80%;
+    background-color: #9cd2f6ff;
+    display:flex;
+    justify-content: center;
   }
 
   .img{
     display:flex;
     justify-content:center;
   }
-
+  .trai{
+    margin-right: 10px;
+  }
   .img img{
     height:380px;
   }
@@ -49,12 +54,17 @@
   ?>
     <main>
       <div class="container">
-        <div class="img">
-          <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
+        <div class=trai>
+            <div class="img">
+              <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
+            </div>
+        
+            <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
         </div>
-        <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
-        <div class="nd__content">
-            <?php echo $row['noiDung']; ?>
+        <div class=phai>
+            <div class="nd__content">
+                <?php echo $row['noiDung']; ?>
+            </div>
         </div>
       </div>
     </main>
