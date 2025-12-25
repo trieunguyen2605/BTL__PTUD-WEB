@@ -14,10 +14,6 @@
 <body>
   <!-- login -->
     <?php
-      session_start();
-      if(!isset($_SESSION["username"])){
-          header('location: login.php');
-      }
       include('connect.php'); 
     ?> 
 <!-- header -->
@@ -57,38 +53,45 @@
               </ul>
               <ul>
                   <li class="hd__bottom-item">
-                    
-                    <div class="user">
-                      <!--  lấy ra và hiện tên người dùng trên header  -->
-                      <?php
-                        $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'";
-                        $result = mysqli_query($conn,$sql);
-                        while($row = mysqli_fetch_array($result)){
-                          echo "<div class='userName' href=''>Xin chào : {$row['tenNguoiDung']} </div>";
-                        }
-                      ?>
-
-                      <!-- bảng hiện ra: đăng xuất và lits danh sách  -->
-                      <div class="cn_user">
-                        <ul class="user-list">
-                          <li class="user_item">
-                            <a class="hd__bottom-link_out" href="index.php?page_layout=dangxuat">Đăng xuất </a>
-                          </li>              
-                          <!-- nếu là admin thì sẽ hiện mục này   -->
-                          <?php
-                            $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
-                            $result = mysqli_query($conn,$sql);
-                            while($row = mysqli_fetch_array($result)){
-                              if($row['idVaiTro']==1){
-                                echo"<li class='user_item'>
-                                      <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
-                                    </li>";
+                    <?php 
+                      session_start();
+                      if(isset($_SESSION["username"])){
+                    ?>
+                      <div class="user">
+                        <!--  lấy ra và hiện tên người dùng trên header  -->
+                        <?php
+                          $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'";
+                          $result = mysqli_query($conn,$sql);
+                          while($row = mysqli_fetch_array($result)){
+                            echo "<div class='userName' href=''>Xin chào : {$row['tenNguoiDung']} </div>";
+                          }
+                        ?>
+  
+                        <!-- bảng hiện ra: đăng xuất và lits danh sách  -->
+                        <div class="cn_user">
+                          <ul class="user-list">
+                            <li class="user_item">
+                              <a class="hd__bottom-link_out" href="index.php?page_layout=dangxuat">Đăng xuất </a>
+                            </li>              
+                            <!-- nếu là admin thì sẽ hiện mục này   -->
+                            <?php
+                              $sql="SELECT* from `nguoi_dung` where tenDangNhap='{$_SESSION["username"]}'";
+                              $result = mysqli_query($conn,$sql);
+                              while($row = mysqli_fetch_array($result)){
+                                if($row['idVaiTro']==1){
+                                  echo"<li class='user_item'>
+                                        <a class='btn' href='index.php?page_layout=listdiadanh'>Danh sách địa điểm </a>
+                                      </li>";
+                                }
                               }
-                            }
-                          ?> 
-                        </ul>
+                            ?> 
+                          </ul>
+                        </div>
                       </div>
-                    </div>
+
+                    <?php }else{ ?>
+                      <a class="hd__bottom-link-login" href="index.php?page_layout=login">Đăng nhập  </a>
+                    <?php } ?>
 
                   </li>
               </ul>
