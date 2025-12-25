@@ -23,6 +23,7 @@
           margin:auto;
         }
         input{
+          border-radius:5px;
           width: 70%;
           margin:3px;
           padding:5px;
@@ -49,7 +50,7 @@
                 <input name="matkhau" type="password" placeholder="Mat khau moi">
             </div>
             <div>
-                <input type="submit" value="Xác nhận">
+                <input style=" background-color: #5a8f29; " type="submit" value="Xác nhận">
             </div>
             <?php
               include('connect.php'); 
