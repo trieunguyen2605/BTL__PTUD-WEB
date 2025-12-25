@@ -82,7 +82,6 @@
                           ?>
                           </select>
                       </div>
->>>>>>> d6ea21b0cf1c547208f4a0b1af854590547cf6fd
 
                       <div>
                           <p>Mùa: </p>
