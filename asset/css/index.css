@@ -1,21 +1,22 @@
-header{
-  position: fixed; /* Hoặc sticky tùy bạn chọn */
+header {
+  position: fixed;
+  /* Hoặc sticky tùy bạn chọn */
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
 }
 
-.hd__wrap{
+.hd__wrap {
   width: 100%;
-  display:flex ;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+
 }
 
-.hd__top{
+.hd__top {
   width: 100%;
   padding: 4px 0;
   background-color: #4EB4F6;
@@ -25,7 +26,7 @@ header{
   /* height: 40px; */
 }
 
-.hd__top-wr{
+.hd__top-wr {
   width: 80%;
   display: flex;
   justify-content: space-between;
@@ -33,31 +34,31 @@ header{
 
 }
 
-.hd__bottom{
+.hd__bottom {
   width: 100%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   height: 60px;
-  background-color:#fff;
+  background-color: #fff;
   box-shadow: 0 0 10px #cacaca;
   /* z-index: 1000; */
 }
 
-.hd__logo img{
+.hd__logo img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
 
-.hd__bottom-wr{
+.hd__bottom-wr {
   width: 80%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
 }
 
-.hd__bottom-list{
+.hd__bottom-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,37 +67,37 @@ header{
   /* font-size: 20px; */
 }
 
-.hd__bottom-item{
+.hd__bottom-item {
   list-style: none;
 }
 
-.userName{
+.userName {
   text-decoration: none;
   color: #0c92eb;
   font-size: 20px;
   font-weight: 8;
 }
 
-.hd__info{
+.hd__info {
   color: white;
 }
 
-.hd__top-wr{
+.hd__top-wr {
   color: white;
 }
 
-.hd__bottom-link{
+.hd__bottom-link {
   text-decoration: none;
   color: #000;
   font-size: 20px;
 }
 
-.hd__bottom-link:hover{
+.hd__bottom-link:hover {
   color: #0c92eb;
 }
 
 /* poster */
-.poster{
+.poster {
   position: relative;
   height: 400px;
   margin-bottom: 20px;
@@ -106,14 +107,14 @@ header{
   background-image: url(https://sinhtour.vn/wp-content/uploads/2021/11/banner-chuan-sinhtour-scaled.jpg);
 }
 
-.hd__search{
+.hd__search {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.hd__input{
+.hd__input {
   padding: 10px 10px;
   width: 400px;
   font-size: 18px;
@@ -121,7 +122,7 @@ header{
   border-radius: 10px;
 }
 
-.hd__search-logo{
+.hd__search-logo {
   height: 30px;
   width: 30px;
   background-color: #fff;
@@ -134,17 +135,17 @@ header{
   font-size: 20px;
 }
 
-.user{
+.user {
   position: relative;
 }
 
-.user:hover .cn_user{
+.user:hover .cn_user {
   display: block;
 }
 
-.cn_user{
+.cn_user {
   display: none;
-  position: absolute;  
+  position: absolute;
   top: 100%;
   right: 0;
   width: 150px;
@@ -153,39 +154,41 @@ header{
   padding-right: 2px;
 }
 
-.btn{
+.btn {
   margin-top: 10px;
+
 }
 
-.user-list{
+.user-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.user_item{
+.user_item {
   padding: 10px 8px 10px;
   font-size: 16px;
 }
 
-.user_item a{
+.user_item a {
   color: #000;
   text-decoration: none;
 }
-.user_item:nth-child(1){
+
+.user_item:nth-child(1) {
   border-bottom: 1px solid #d9d6d6;
 }
 
-.user_item:hover a{
+.user_item:hover a {
   color: #0c92eb;
 }
 
 
-.btn{
+.btn {
   white-space: nowrap;
 }
 
-.hd__bottom-link-login{
+.hd__bottom-link-login {
   text-decoration: none;
   color: #0c92eb;
   font-size: 20px;

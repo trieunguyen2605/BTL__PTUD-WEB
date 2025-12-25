@@ -10,29 +10,53 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body{
+            width:95%;
+            margin:auto;
           margin-top: 86px;
+          background-color:#EAF8FB;
         }
         table{
-            width: 100%;
+            border-radius:5px;
+            background-color:white;
+            margin:auto;
+            margin-top: 5px;
+            /* width: 95%; */
+            display:flex;
+          justify-content:center;
         }
 
         .btn {
+           text-decoration: none;
             color: black;
-           background-color: rgba(210, 252, 111, 0.392);
+           background-color: #94cdf3ff;
             border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
+            
+          
+            
         }
-        tr{
+        a{
+            margin-bottom: 5px;
+        }
+        /* tr{
+            border-top:1px solid gray;
+        } */
+        td{
+            border:none;
+        }
+        td {
+        border-bottom: 1px solid gray;
+        border-right:1px solid gray;
+        /* padding: 10px; */
+        }
 
-        }
-        
     </style>
 </head>
 
-<body style="margin-top: 7%">
+<body style="margin-top: 7%; ">
     <h1> Danh sách địa danh </h1>
-    <a class="btn" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
+    <a class="btn" style="background-color:white; margin-right:5%;text-decoration: none;" href="index.php?page_layout=themdiadanh">Thêm địa danh</a>
     <table border=2>
         <tr>
             <th>Id</th>
@@ -42,6 +66,7 @@
             <th>TOP</th>
             <th>Tên Mùa</th>
             <th>Tên vùng miền </th>
+            <th>Chức Năng</th>
         </tr>
         <?php
             include('connect.php'); 

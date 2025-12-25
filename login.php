@@ -94,9 +94,9 @@
                 <input style=" background-color: #5a8f29; " type="submit" value="Đăng nhập">
                 </div>
                 <a style="text-decoration: none;" href="forgetpw.php"> Quên mật khẩu? </a>
-                <!-- <?php if($error != ""): ?>
+                <?php if($error != ""): ?>
                 <p class="warning"><?= $error ?></p>
-                <?php endif; ?> -->
+                <?php endif; ?>
                 
                 <div id="register" style="border-top: 2px solid grey">  
                 <p > Bạn chưa có tài khoản?</p>

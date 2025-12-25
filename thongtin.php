@@ -19,16 +19,18 @@
   background-repeat: no-repeat;
   } */
   main{
+    
     margin-top: 100px;
     display:flex;
     justify-content: center;
   }
 
   .container{
-    width:80%;
-    background-color: #9cd2f6ff;
+    border-radius:20px;
+    width:60%;
+    background-color: white;
     display:flex;
-    justify-content: center;
+    /* justify-content: center; */
   }
 
   .img{
@@ -36,13 +38,16 @@
     justify-content:center;
   }
   .trai{
-    margin-right: 10px;
+    
+    margin: 0 5% 0 10px;
   }
   .img img{
+    width:380px;
     height:380px;
+    border-radius:20px;
   }
 </style>
-<body>
+<body style="background-color:#E6F9FB;">
   <?php
     $id = $_GET['id'];
   ?>
@@ -55,14 +60,14 @@
     <main>
       <div class="container">
         <div class=trai>
-            <div class="img">
+            <div class="img" style="margin-top: 10px">
               <img class="nd__img" src="<?php echo $row['anhDaiDien']; ?>" alt="">
             </div>
         
             <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
         </div>
         <div class=phai>
-            <div class="nd__content">
+            <div class="nd__content" style="margin: 10px 10px 0 0;">
                 <?php echo $row['noiDung']; ?>
             </div>
         </div>

@@ -7,6 +7,7 @@
     <style>
         body{
             margin:10%;
+            background-color: #EAF8FB;
         }
         main{
             
@@ -28,7 +29,7 @@
         }
 
         input {
-            border: 2px solid rgb(110, 126, 19);
+            border: 2px solid rgba(19, 126, 124, 1);
             border-radius: 5px;
         }
         .warning{
@@ -50,7 +51,7 @@
               $result1 = mysqli_query($conn,$sql);
               while($row1 = mysqli_fetch_array($result1)){
             ?>
-              <div style=" width:50%;border:2px solid rgb(110, 126, 19); border-radius: 5px;background-color:#fff7e6;">
+              <div style=" width:50%;border:2px solid rgba(19, 126, 124, 1); border-radius: 5px;background-color:rgba(249, 248, 243, 1);">
                   <div class="row">
                       <div>
                           <p>Tên địa điểm: </p>
@@ -59,7 +60,7 @@
 
                       <div>
                           <p>Nội dung:</p>
-                          <textarea   style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;"name="noidung"><?php echo $row1['tenDiaDiem'] ?> </textarea>
+                          <textarea   style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;"name="noidung"><?php echo $row1['tenDiaDiem'] ?> </textarea>
                       </div>
                   </div>
                   <div class="row">
@@ -71,7 +72,7 @@
                   <div class="row">
                       <div>
                           <p>Vùng miền: </p>
-                          <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="vungmien">
+                          <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="vungmien">
                               <option value="">-- Chọn vùng miền --</option>
                               <?php
                               $sqlQG = "SELECT * FROM vung_mien";
@@ -82,11 +83,9 @@
                           ?>
                           </select>
                       </div>
->>>>>>> d6ea21b0cf1c547208f4a0b1af854590547cf6fd
-
                       <div>
                           <p>Mùa: </p>
-                          <select style="border: 2px solid rgb(110, 126, 19);border-radius: 5px;" name="mua">
+                          <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="mua">
                               <option value="">-- Chọn Mùa --</option>
                               <?php
                               $sqlTL = "SELECT * FROM mua_du_lich";
@@ -140,7 +139,7 @@
                     echo "File không phải là ảnh.";
                     $uploadOk = 0;
                 }
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif"&&  $imageFileType != "webp" ) {
                     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
                     $uploadOk = 0;
                 }

@@ -12,106 +12,108 @@
     }
   </style>
 </head>
-<body>
-     <div class="container">
-       <div class="places">
-      <!-- TOP -->
-      <section>
-        <h2 class="title"> Địa điểm hot </h2>
-        <div class="section__hd">
-          <div class="content"> Sống để yêu thương </div>
-          <div class="section__hd-right">
-            <a class="section_right-link" href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
-          </div>
-        </div>
-        <div class="hotPlace__list ">
-          <!-- sản phẩm  -->
-          <?php
-              $sql = "SELECT * FROM `dia_diem` where laTop=1 limit 3";
-              $result = mysqli_query($conn,$sql);
-              while($row = mysqli_fetch_array($result)){
-          ?>
-              <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
-                <div class="pl__img">
-                  <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
-                </div>
-                <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
+<body style="background-color: #EAF8FB;">
+  <div class="container">
+    
+    <div class="places">
+        <!-- TOP -->
+          <section>
+            <h2 class="title"> Địa điểm hot </h2>
+            <div class="section__hd">
+              <div class="content"> Sống để yêu thương </div>
+              <div class="section__hd-right">
+                <a class="section_right-link" href="index.php?page_layout=diadiemhot">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
               </div>
-          <?php
-              }
-          ?>
-          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
-        </div>
-      </section>
+            </div>
+            <div class="hotPlace__list ">
+              <!-- sản phẩm  -->
+              <?php
+                  $sql = "SELECT * FROM `dia_diem` where laTop=1 limit 3";
+                  $result = mysqli_query($conn,$sql);
+                  while($row = mysqli_fetch_array($result)){
+              ?>
+                  <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
+                    <div class="pl__img">
+                      <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                    </div>
+                    <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
+                  </div>
+              <?php
+                  }
+              ?>
+              <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
+            </div>
+          </section>
 
-      <!-- seasons -->
-      <section>
-        <h2 class="title"> Du lịch mùa  </h2>
-        <div class="section__hd">
-          <div class="content"> Sống để yêu thương </div>
-          <div class="section__hd-right">
-            <a class="section_right-link" href="index.php?page_layout=theomua">Xem tất cả <i class="section_logo fa-solid fa-right-long"></i> </a>
-          </div>
-        </div>
-        <div class="hotPlace__list ">
-          <!-- sản phẩm  -->
-          <!-- ở đây là trang chủ chỉ lấy ra 3 cái  -->
-          <?php
-            $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 order by rand() LIMIT 1)
-                    UNION
-                    (SELECT * FROM dia_diem WHERE idMua = 3  order by rand() LIMIT 1)
-                    UNION
-                    (SELECT * FROM dia_diem WHERE idMua = 4 order by rand() LIMIT 1)";
-            $result = mysqli_query($conn,$sql);
-            while($row = mysqli_fetch_array($result)){
-          ?>
-            <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
-              <div class="pl__img">
-                <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+          <!-- seasons -->
+          <section>
+            <h2 class="title"> Du lịch mùa  </h2>
+            <div class="section__hd">
+              <div class="content"> Sống để yêu thương </div>
+              <div class="section__hd-right">
+                <a class="section_right-link" href="index.php?page_layout=theomua">Xem tất cả <i class="fa-solid fa-right-long"></i></a>
               </div>
-              <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
             </div>
-          <?php
-              }
-          ?>
-          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
-        </div>
-      </section>
-      
-      <!-- regions: miền  -->
-      <section>
-        <h2 class="title"> Du lịch miền   </h2>
-        <div class="section__hd">
-          <div class="content"> Sống để yêu thương </div>
-          <div class="section__hd-right">
-            <a class="section_right-link" href="index.php?page_layout=theomien">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
-          </div>
-        </div>
-        <div class="hotPlace__list ">
-          <!-- sản phẩm  -->
-          <?php
-            // $sql = "SELECT * FROM `dia_diem` where idVungMien IN (1,2,3) limit 3";
-            $sql = "(SELECT * FROM dia_diem WHERE idVungMien = 1 ORDER BY RAND() LIMIT 1)
-                    UNION
-                    (SELECT * FROM dia_diem WHERE idVungMien = 2 ORDER BY RAND() LIMIT 1)
-                    UNION
-                    (SELECT * FROM dia_diem WHERE idVungMien = 3 ORDER BY RAND() LIMIT 1)";
-            $result = mysqli_query($conn,$sql);
-            while($row = mysqli_fetch_array($result)){
-          ?>
-            <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
-              <div class="pl__img">
-                <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+            <div class="hotPlace__list ">
+              <!-- sản phẩm  -->
+              <!-- ở đây là trang chủ chỉ lấy ra 3 cái  -->
+              <?php
+                $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 order by rand() LIMIT 1)
+                        UNION
+                        (SELECT * FROM dia_diem WHERE idMua = 3  order by rand() LIMIT 1)
+                        UNION
+                        (SELECT * FROM dia_diem WHERE idMua = 4 order by rand() LIMIT 1)";
+                $result = mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_array($result)){
+              ?>
+                <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
+                  <div class="pl__img">
+                    <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                  </div>
+                  <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
+                </div>
+              <?php
+                  }
+              ?>
+              <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
+            </div>
+          </section>
+          
+          <!-- regions: miền  -->
+          <section>
+            <h2 class="title"> Du lịch miền   </h2>
+            <div class="section__hd">
+              <div class="content"> Sống để yêu thương </div>
+              <div class="section__hd-right">
+                <a class="section_right-link" href="index.php?page_layout=theomien">Xem tất cả <i class="fa-solid fa-right-long"></i> </a>
               </div>
-              <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
             </div>
-          <?php
-              }
-          ?>
-          <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
-        </div>
-      </section>
-    </div>
+            <div class="hotPlace__list ">
+              <!-- sản phẩm  -->
+              <?php
+                // $sql = "SELECT * FROM `dia_diem` where idVungMien IN (1,2,3) limit 3";
+                $sql = "(SELECT * FROM dia_diem WHERE idVungMien = 1 ORDER BY RAND() LIMIT 1)
+                        UNION
+                        (SELECT * FROM dia_diem WHERE idVungMien = 2 ORDER BY RAND() LIMIT 1)
+                        UNION
+                        (SELECT * FROM dia_diem WHERE idVungMien = 3 ORDER BY RAND() LIMIT 1)";
+                $result = mysqli_query($conn,$sql);
+                while($row = mysqli_fetch_array($result)){
+              ?>
+                <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
+                  <div class="pl__img">
+                    <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
+                  </div>
+                  <div class="pl__name"><?php echo $row['tenDiaDiem']; ?> </div>
+                </div>
+              <?php
+                  }
+              ?>
+              <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
+            </div>
+          </section>
+    
+     </div>
   </div>
   <footer class="footer">
     <div class="ft_container">
