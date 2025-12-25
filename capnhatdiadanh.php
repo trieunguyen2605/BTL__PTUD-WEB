@@ -83,6 +83,10 @@
                           ?>
                           </select>
                       </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fb5eb3cf6a2d22864979194b9eb77605f6968176
                       <div>
                           <p>Mùa: </p>
                           <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="mua">

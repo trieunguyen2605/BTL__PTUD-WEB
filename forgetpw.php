@@ -63,7 +63,7 @@
                   if(mysqli_num_rows($resultM)>0 ){
                       $sql="UPDATE `nguoi_dung` SET `matKhau`='$matKhau' where  `tenDangNhap`='$tenDangNhap'";
                       mysqli_query($conn, $sql);
-                      header('location:login.php');
+                      echo "<script>window.location.href='login.php';</script>";
                   }else{
                     echo"<div>Tài khoản của bạn không tồn tại!</div>";
                   }
