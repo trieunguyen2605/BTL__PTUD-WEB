@@ -6,20 +6,7 @@
   <title>Thông tin </title>
 </head>
 <style>
-  /* body{
-    background-image:<?php
-    include('connect.php'); 
-    $sql="SELECT *FROM `dia_diem` where id='$id'";
-    $result = mysqli_query($conn,$sql);
-    while($row = mysqli_fetch_array($result)){
-  ?>
-    "<?php echo $row['anhDaiDien']; ?>"
-  <?php } ?>;
-  background-size: cover;
-  background-repeat: no-repeat;
-  } */
   main{
-    
     margin-top: 100px;
     display:flex;
     justify-content: center;
@@ -29,6 +16,7 @@
     border-radius:20px;
     width:60%;
     background-color: white;
+    box-shadow:0 0 10px #cacacaff;
     display:flex;
     /* justify-content: center; */
   }
@@ -36,6 +24,12 @@
   .img{
     display:flex;
     justify-content:center;
+    overflow:hidden;
+    border-radius:20px;
+  }
+
+  .img:hover img{
+    transform:scale(1.1)
   }
   .trai{
     
