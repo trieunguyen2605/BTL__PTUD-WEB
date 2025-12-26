@@ -68,11 +68,11 @@
               <!-- sản phẩm  -->
               <!-- ở đây là trang chủ chỉ lấy ra 3 cái  -->
               <?php
-                $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 order by rand() LIMIT 1)
+                $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 and laTop=1 order by rand() LIMIT 1 )
                         UNION
-                        (SELECT * FROM dia_diem WHERE idMua = 3  order by rand() LIMIT 1)
+                        (SELECT * FROM dia_diem WHERE idMua = 3  and laTop=1 order by rand() LIMIT 1 )
                         UNION
-                        (SELECT * FROM dia_diem WHERE idMua = 4 order by rand() LIMIT 1)";
+                        (SELECT * FROM dia_diem WHERE idMua = 4 and laTop=1 order by rand() LIMIT 1)";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_array($result)){
               ?>
@@ -102,11 +102,11 @@
               <!-- sản phẩm  -->
               <?php
                 // $sql = "SELECT * FROM `dia_diem` where idVungMien IN (1,2,3) limit 3";
-                $sql = "(SELECT * FROM dia_diem WHERE idVungMien = 1 ORDER BY RAND() LIMIT 1)
+                $sql = "(SELECT * FROM dia_diem WHERE idVungMien = 1 and laTop=1 ORDER BY RAND() LIMIT 1) 
                         UNION
-                        (SELECT * FROM dia_diem WHERE idVungMien = 2 ORDER BY RAND() LIMIT 1)
+                        (SELECT * FROM dia_diem WHERE idVungMien = 2 and laTop=1 ORDER BY RAND() LIMIT 1)
                         UNION
-                        (SELECT * FROM dia_diem WHERE idVungMien = 3 ORDER BY RAND() LIMIT 1)";
+                        (SELECT * FROM dia_diem WHERE idVungMien = 3 and laTop=1 ORDER BY RAND() LIMIT 1)";
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_array($result)){
               ?>
