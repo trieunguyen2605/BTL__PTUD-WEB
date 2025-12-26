@@ -6,7 +6,7 @@
     <title>Thêm Địa Danh Mới</title>
     <style>
         body{
-            background-color: #eaf9fcff;
+            background-color: #edfcffff;
             margin:10%;
         }
         main{
@@ -29,7 +29,7 @@
         }
 
         input {
-            border: 2px solid rgba(19, 126, 124, 1);
+            border: 2px solid rgba(21, 137, 135, 1);
             border-radius: 5px;
         }
         .warning{

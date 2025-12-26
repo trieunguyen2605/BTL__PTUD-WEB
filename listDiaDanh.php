@@ -31,7 +31,7 @@
         .btn {
            text-decoration: none;
             color: black;
-           background-color: #8dcbf4ff;
+           background-color: #58bcffff;
             border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
