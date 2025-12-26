@@ -147,7 +147,7 @@
         
                 // Cho phép các định dạng file ảnh nhất định
                 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif" ) {
+                && $imageFileType != "gif" && $imageFileType != "webp" ) {
                     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
                     $uploadOk = 0;
                 }
