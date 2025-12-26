@@ -26,6 +26,7 @@
     justify-content:center;
     overflow:hidden;
     border-radius:20px;
+    box-shadow:0 0 10px #bcbcbcff;
   }
 
   .img:hover img{
