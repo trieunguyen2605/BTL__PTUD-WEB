@@ -26,13 +26,19 @@
           width: 70%;
           margin:3px;
           padding:5px;
+          border-radius:5px;
         }
         .box{
           background-color: white;
           border-radius:5px;
-          border: 1px solid black;
+          border: 1px solid white;
           box-sizing: content;
           text-align:center;
+        }
+        .warning{
+          font-size: 14px;
+          color: red;
+            text-align: center;
         }
     </style>
 </head>
@@ -40,7 +46,7 @@
     <main>
       <div class= container>
         <form action="index.php?page_layout=forgetpw" method="post">
-          <div class="box">
+          <div class="box" style="background-color:rgba(255, 255, 255, 0.92)">
             <h1>Quên mật khẩu</h1>
             <div>
                 <input name="tendangnhap" type="text" placeholder="Ten dang nhap">
@@ -49,7 +55,7 @@
                 <input name="matkhau" type="password" placeholder="Mat khau moi">
             </div>
             <div>
-                <input type="submit" value="Xác nhận">
+                <input style=" background-color: #5a8f29; " type="submit" value="Xác nhận">
             </div>
             <?php
               include('connect.php'); 
@@ -65,11 +71,11 @@
                       mysqli_query($conn, $sql);
                       echo "<script>window.location.href='login.php';</script>";
                   }else{
-                    echo"<div>Tài khoản của bạn không tồn tại!</div>";
+                      echo "<p class='warning'>tài khoản của bạn không tồn tại!</p>";
                   }
                 }
               else{
-                  echo "</br>Vui long nhap day du thong tin</br></br>";
+                echo "<p class='warning'>Vui lòng nhập đầy đủ thông tin!</p>";
               }
             ?>
           </div>

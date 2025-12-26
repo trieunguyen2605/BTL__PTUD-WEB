@@ -40,6 +40,10 @@
   .trai{
     
     margin: 0 5% 0 10px;
+    
+  }
+  .phai{
+    text-align: justify;
   }
   .img img{
     width:380px;
@@ -67,7 +71,7 @@
             <h1 class="nd__title" style="text-align:center;"><?php echo $row['tenDiaDiem']; ?></h1>
         </div>
         <div class="phai">
-            <div class="nd__content" style="margin: 10px 10px 0 0;">
+            <div class="nd__content" style="margin: 10px 10px 0 0; ">
                 <?php echo $row['noiDung']; ?>
             </div>
         </div>
