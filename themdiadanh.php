@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thêm Phim Mới</title>
+    <title>Thêm Địa Danh Mới</title>
     <style>
         body{
-            background-color: #EAF8FB;
+            background-color: #eaf9fcff;
             margin:10%;
         }
         main{
@@ -40,7 +40,7 @@
     </style>
 </head>
 <body >
-    <h1>Thêm địa danh Mới</h1>
+    <h1>Thêm địa danh mới</h1>
     <form action="index.php?page_layout=themdiadanh" method="post" enctype="multipart/form-data">
             <div style=" width:660px;border:2px solid rgba(10, 137, 135, 1); border-radius: 5px;background-color:rgba(251, 251, 251, 1);box-shadow: 0 0 10px #d5d5d5;">
                 <div class="row">
