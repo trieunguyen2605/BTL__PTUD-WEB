@@ -12,16 +12,15 @@
 
 </style>
 <body>
-  <!-- login -->
     <?php
-      include('connect.php'); 
+      include('connect.php'); // sử dụng sql 
     ?> 
 <!-- header -->
 <header>
   <div class="hd__wrap">
         <div class="hd__top">
           <div class="hd__top-wr">
-            <div>Have a good day!</div>
+            <div>Have a nice trip!</div>
             <div class="hd__info">
               Thông tin liên hệ: 0394759392
             </div>
@@ -36,19 +35,19 @@
               </div>
               <ul class="hd__bottom-list">
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=trangchu">Trang chủ</a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=trangchu">Trang chủ</a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=gioithieu">Giới thiệu </a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=gioithieu">Giới thiệu </a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=diadiemhot">Các địa điểm HOT</a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=diadiemhot">Các địa điểm HOT</a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=theomien">Du lịch theo miền </a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=theomien">Du lịch theo miền </a>
                   </li>
                   <li class="hd__bottom-item">
-                    <a class="hd__bottom-link" onclick="onClick()" href="index.php?page_layout=theomua">Du lịch theo mùa </a>
+                    <a class="hd__bottom-link" href="index.php?page_layout=theomua">Du lịch theo mùa </a>
                   </li>
               </ul>
               <ul>
@@ -60,10 +59,10 @@
                       <div class="user">
                         <!--  lấy ra và hiện tên người dùng trên header  -->
                         <?php
-                          $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'";
-                          $result = mysqli_query($conn,$sql);
-                          while($row = mysqli_fetch_array($result)){
-                            echo "<div class='userName' href=''>Xin chào : {$row['tenNguoiDung']} </div>";
+                          $sql="SELECT* from `nguoi_dung`where tenDangNhap='{$_SESSION["username"]}'"; 
+                          $result = mysqli_query($conn,$sql); 
+                          while($row = mysqli_fetch_array($result)){ 
+                            echo "<div class='userName' href=''>Xin chào: {$row['tenNguoiDung']} </div>";
                           }
                         ?>
   

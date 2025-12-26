@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $tenNguoiDung = $_POST['tenTk'];
         $matKhau = $_POST['matkhau'];
 
-        // MẶC ĐỊNH LÀ NGƯỜI DÙNG
+
         $idVaiTro = 2;
 
         $sql = "INSERT INTO nguoi_dung 

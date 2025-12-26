@@ -145,7 +145,6 @@
                     echo "Chỉ những file JPG, JPEG, PNG & GIF mới được chấp nhận.";
                     $uploadOk = 0;
                 }
-                echo "3";
                 }
 
                 #Kết thúc xử lý ảnh

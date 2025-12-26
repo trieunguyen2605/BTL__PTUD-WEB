@@ -51,6 +51,7 @@
               <?php
                   }
               ?>
+
               <div class='no-search' style='display: none;font-size: 20px; color: red;'> không có địa điểm bạn tìm kiếm!</div>
             </div>
           </section>
@@ -64,17 +65,17 @@
                 <a class="section_right-link" href="index.php?page_layout=theomua">Xem tất cả <i class="fa-solid fa-right-long"></i></a>
               </div>
             </div>
-            <div class="hotPlace__list ">
+            <div class="hotPlace__list "> 
               <!-- sản phẩm  -->
               <!-- ở đây là trang chủ chỉ lấy ra 3 cái  -->
               <?php
-                $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 and laTop=1 order by rand() LIMIT 1 )
+                $sql = "(SELECT * FROM dia_diem WHERE idMua = 1 and laTop=1 order by rand() LIMIT 1 ) 
                         UNION
                         (SELECT * FROM dia_diem WHERE idMua = 3  and laTop=1 order by rand() LIMIT 1 )
                         UNION
                         (SELECT * FROM dia_diem WHERE idMua = 4 and laTop=1 order by rand() LIMIT 1)";
                 $result = mysqli_query($conn,$sql);
-                while($row = mysqli_fetch_array($result)){
+                while($row = mysqli_fetch_array($result)){ 
               ?>
                 <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
                   <div class="pl__img">

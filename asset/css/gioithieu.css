@@ -83,8 +83,8 @@ body{
 
 .in__img{
   width: 100%;
-  border-radius: 6px;
-  box-shadow:0 0 10px rgb(198, 198, 198);
+  border-radius: 10px;
+  box-shadow:0 0 10px rgb(170, 169, 169);
 }
 
 .in__img:hover{
@@ -93,4 +93,5 @@ body{
 
 img{
   border-radius: 6px;
+  box-shadow:0 0 10px rgb(170, 169, 169);
 }

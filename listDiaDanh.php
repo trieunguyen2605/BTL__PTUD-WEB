@@ -35,16 +35,11 @@
             border: 2px solid black;
             padding: 0 5px;
             border-radius: 5px;
-            
-          
-            
         }
         a{
             margin-bottom: 5px;
         }
-        /* tr{
-            border-top:1px solid gray;
-        } */
+
         td{
             border:none;
         }

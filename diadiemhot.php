@@ -20,7 +20,7 @@
             $result = mysqli_query($conn,$sql);
             while($row = mysqli_fetch_array($result)){
           ?>
-            <div class="pl__item" onclick="openInfo(<?php echo $row['id']; ?>)">
+            <div class="pl__item" onclick=" (<?php echo $row['id']; ?>)">
               <div class="pl__img">
                 <img src="<?php echo $row['anhDaiDien']; ?>" alt="">
               </div>

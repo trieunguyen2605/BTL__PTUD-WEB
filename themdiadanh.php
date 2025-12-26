@@ -14,7 +14,7 @@
             margin: auto;
         }
         
-         form,
+        form,
         h1 {
             display: flex;
             justify-content: center;
@@ -33,7 +33,6 @@
             border-radius: 5px;
         }
         .warning{
-           
           color: red;
             text-align: center;
         }
@@ -67,13 +66,13 @@
                         <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="vungmien">
                             <option value="">-- Chọn vùng miền --</option>
                             <?php
-                            include('connect.php'); 
-                            $sqlQG = "SELECT * FROM vung_mien";
-                            $resultVM = mysqli_query($conn, $sqlQG);
-                            while($rowVM = mysqli_fetch_array($resultVM)){
-                                echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
-                            }
-                        ?>
+                              include('connect.php'); 
+                              $sqlQG = "SELECT * FROM vung_mien";
+                              $resultVM = mysqli_query($conn, $sqlQG);
+                              while($rowVM = mysqli_fetch_array($resultVM)){
+                                  echo "<option value='{$rowVM['id']}'>{$rowVM['tenMien']}</option>";
+                              }
+                            ?>
                         </select>
                     </div>
 
@@ -94,6 +93,16 @@
                     <div>
                         <p>TOP:</p>
                         <input name="latop" type="text">
+                        <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="mua">
+                            <option value="">-- Top --</option>
+                            <?php
+                              $sqlTL = "SELECT * FROM mua_du_lich";
+                              $resultM = mysqli_query($conn, $sqlTL);
+                              while($rowM = mysqli_fetch_array($resultM)){
+                              echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
                 </div>
                 <br>
