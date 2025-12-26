@@ -11,6 +11,11 @@
   border-radius: 10px;
   width: 80%;
   /* background-color: white; */
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #d5d5d5;
 }
 
 .title {
@@ -52,10 +57,11 @@ section {
 
 .pl__item {
   width: 33.3333%;
-  box-shadow: 0 0 10px #ababab;
+  box-shadow: 0 0 10px #c3c3c3;
   border-radius: 20px;
   overflow: hidden;
   padding-bottom: 10px;
+  background-color: #eaf8fb;
 }
 
 .pl__item:nth-child(2) {
