@@ -2,6 +2,13 @@ body{
   background-color:azure;
 }
 
+.introduce__content{
+  background-color: #fff;
+  box-sizing: border-box;
+  padding:10px 20px 20px ;
+  box-shadow:0 0 10px rgb(228, 227, 227);
+}
+
 .container{
   display: flex;
   align-items: center;
@@ -9,6 +16,9 @@ body{
   margin-top: 100px;
 }
 
+.section+.section{
+  margin-top: 40px;
+}
 .introduce{
   width: 80%;
 }
@@ -39,16 +49,18 @@ body{
 
 .in__wrap{
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .in__left{
   width: 50% ;
   font-size: 17px;
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 
@@ -59,6 +71,8 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .in__text{
@@ -69,5 +83,14 @@ body{
 
 .in__img{
   width: 100%;
+  border-radius: 6px;
+  box-shadow:0 0 10px rgb(198, 198, 198);
+}
+
+.in__img:hover{
+  transform: scale(1.1);
+}
+
+img{
   border-radius: 6px;
 }
