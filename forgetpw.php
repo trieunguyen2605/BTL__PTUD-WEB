@@ -54,6 +54,9 @@
             <div>
                 <input name="matkhau" type="password" placeholder="Mat khau moi">
             </div>
+             <div>
+                <input name="matkhau" type="password" placeholder="Nhap lai mat khau moi">
+            </div>
             <div>
                 <input style=" background-color: #5a8f29; " type="submit" value="Xác nhận">
             </div>

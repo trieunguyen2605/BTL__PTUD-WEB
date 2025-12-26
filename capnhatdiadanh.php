@@ -51,7 +51,7 @@
               $result1 = mysqli_query($conn,$sql);
               while($row1 = mysqli_fetch_array($result1)){
             ?>
-              <div style=" width:50%;border:2px solid rgba(19, 126, 124, 1); border-radius: 5px;background-color:rgba(249, 248, 243, 1);">
+              <div style=" width:50%;border:2px solid rgba(19, 126, 124, 1); border-radius: 5px;background-color:rgba(251, 251, 251, 1);box-shadow: 0 0 10px #d5d5d5;">
                   <div class="row">
                       <div>
                           <p>Tên địa điểm: </p>
@@ -83,6 +83,8 @@
                           ?>
                           </select>
                       </div>
+
+
                       <div>
                           <p>Mùa: </p>
                           <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="mua">

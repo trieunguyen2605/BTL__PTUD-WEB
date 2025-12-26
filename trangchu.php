@@ -136,12 +136,12 @@
       </div>
       <div class="ft_thongtin">
         <h3>Thông tin</h3>
-        <ul>
-          <li><a href="#">Trang chủ</a></li>
-          <li><a href="#">Giới thiệu</a></li>
-          <li><a href="#">Các địa điểm HOT</a></li>
-          <li><a href="#">Du lịch theo miền</a></li>
-          <li><a href="#">Du lịch theo mùa</a></li>
+        <ul style="list-style-type: none; padding-left:0;">
+          <li><a style="text-decoration: none;" href="http://localhost/BTL__PTUD-WEB/index.php?page_layout=trangchu">Trang chủ</a></li>
+          <li><a style="text-decoration: none;" href="http://localhost/BTL__PTUD-WEB/index.php?page_layout=gioithieu">Giới thiệu</a></li>
+          <li><a style="text-decoration: none;" href="http://localhost/BTL__PTUD-WEB/index.php?page_layout=diadiemhot">Các địa điểm HOT</a></li>
+          <li><a style="text-decoration: none;" href="http://localhost/BTL__PTUD-WEB/index.php?page_layout=theomien">Du lịch theo miền</a></li>
+          <li><a style="text-decoration: none;" href="http://localhost/BTL__PTUD-WEB/index.php?page_layout=theomua">Du lịch theo mùa</a></li>
         </ul>
       </div>
       <div class="ft_chungnhan">
