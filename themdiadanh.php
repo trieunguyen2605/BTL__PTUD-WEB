@@ -93,16 +93,7 @@
                     <div>
                         <p>TOP:</p>
                         <input name="latop" type="text">
-                        <select style="border: 2px solid rgba(19, 126, 124, 1);border-radius: 5px;" name="mua">
-                            <option value="">-- Top --</option>
-                            <?php
-                              $sqlTL = "SELECT * FROM mua_du_lich";
-                              $resultM = mysqli_query($conn, $sqlTL);
-                              while($rowM = mysqli_fetch_array($resultM)){
-                              echo "<option value='{$rowM['id']}'>{$rowM['tenMua']}</option>";
-                            }
-                            ?>
-                        </select>
+                        
                     </div>
                 </div>
                 <br>
