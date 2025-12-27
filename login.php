@@ -14,13 +14,6 @@
             background-position: center;
                 }
         .container{
-            
-            
-            /* margin: auto; */
-            /* width: 20%; */
-            /* height:auto ; */
-           /* background-color: rgba(255, 255, 255, 0.85); */
-            /* background-color: rgba(198, 196, 196, 0.392); */
              display:flex;
             align-items: center; 
             justify-content: center;
@@ -124,7 +117,14 @@
           if (mysqli_num_rows($result) > 0) { 
               session_start();
               $_SESSION["username"] = $tenDangNhap;
-              header('location: index.php?page_layout=trangchu'); 
+              // header('location: index.php?page_layout=trangchu'); 
+              while($row = mysqli_fetch_array($result)){
+                if($row['idVaiTro']==1){
+                  header('location: index.php?page_layout=listdiadanh'); 
+                }else{
+                  header('location: index.php?page_layout=trangchu'); 
+                }
+              }
           }
           else{
             $error="Tên đăng nhập hoặc mật khẩu không chính xác!";
